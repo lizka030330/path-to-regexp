@@ -1,0 +1,198 @@
+lizaefremenko@MacBook-Pro-Liza Lab-1-Agent % cd ~/Desktop/"IT STEP"/AI/path-to-regexp
+npx vitest run src/characterization.spec.ts
+
+ RUN  v5.0.5 /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp
+
+ ❯ src/characterization.spec.ts (8 tests | 8 failed) 10ms
+   ❯ match() — поточна поведінка (характеризація) (8)
+     × два параметри з README 5ms
+     × wildcard з README 1ms
+     × необовʼязкова група без параметра 0ms
+     × адреса, що не підходить під шаблон 0ms
+     × коректне %-кодування декодується один раз 1ms
+     × decode: false лишає параметр сирим 0ms
+     × бите %-кодування в параметрі 2ms
+     × бите %-кодування у wildcard 0ms
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > два параметри з README
+AssertionError: expected { path: '/test/route', …(1) } to deeply equal '?'
+
+- Expected:
+"?"
+
++ Received:
+{
+  "params": {
+    "bar": "route",
+    "foo": "test",
+  },
+  "path": "/test/route",
+}
+
+ ❯ src/characterization.spec.ts:16:48
+     14|   // ВХІД: Readme.md L28–31
+     15|   it("два параметри з README", () => {
+     16|     expect(match("/:foo/:bar")("/test/route")).toEqual("?");
+       |                                                ^
+     17|   });
+     18|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > wildcard з README
+AssertionError: expected { path: '/bar/baz', …(1) } to deeply equal '?'
+
+- Expected:
+"?"
+
++ Received:
+{
+  "params": {
+    "splat": [
+      "bar",
+      "baz",
+    ],
+  },
+  "path": "/bar/baz",
+}
+
+ ❯ src/characterization.spec.ts:22:42
+     20|   // ВХІД: Readme.md L39–42
+     21|   it("wildcard з README", () => {
+     22|     expect(match("/*splat")("/bar/baz")).toEqual("?");
+       |                                          ^
+     23|   });
+     24|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > необовʼязкова група без параметра
+AssertionError: expected { path: '/users/delete', params: {} } to deeply equal '?'
+
+- Expected:
+"?"
+
++ Received:
+{
+  "params": {},
+  "path": "/users/delete",
+}
+
+ ❯ src/characterization.spec.ts:28:59
+     26|   // ВХІД: Readme.md L50–53
+     27|   it("необовʼязкова група без параметра", () => {
+     28|     expect(match("/users{/:id}/delete")("/users/delete")).toEqu…
+       |                                                           ^
+     29|   });
+     30|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > адреса, що не підходить під шаблон
+AssertionError: expected false to deeply equal '?'
+
+- Expected:
+"?"
+
++ Received:
+false
+
+ ❯ src/characterization.spec.ts:34:42
+     32|   // ВХІД: Readme.md L28 (той самий шаблон), адреса з меншою кі…
+     33|   it("адреса, що не підходить під шаблон", () => {
+     34|     expect(match("/:foo/:bar")("/test")).toEqual("?");
+       |                                          ^
+     35|   });
+     36|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > коректне %-кодування декодується один раз
+AssertionError: expected { path: '/param%2523', …(1) } to deeply equal '?'
+
+- Expected:
+"?"
+
++ Received:
+{
+  "params": {
+    "test": "param%23",
+  },
+  "path": "/param%2523",
+}
+
+ ❯ src/characterization.spec.ts:40:44
+     38|   // ВХІД: src/cases.spec.ts L500–503
+     39|   it("коректне %-кодування декодується один раз", () => {
+     40|     expect(match("/:test")("/param%2523")).toEqual("?");
+       |                                            ^
+     41|   });
+     42|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > decode: false лишає параметр сирим
+AssertionError: expected { path: '/caf%C3%A9', …(1) } to deeply equal '?'
+
+- Expected:
+"?"
+
++ Received:
+{
+  "params": {
+    "test": "caf%C3%A9",
+  },
+  "path": "/caf%C3%A9",
+}
+
+ ❯ src/characterization.spec.ts:46:62
+     44|   // ВХІД: src/cases.spec.ts L486 (/caf%C3%A9) з опцією decode:…
+     45|   it("decode: false лишає параметр сирим", () => {
+     46|     expect(match("/:test", { decode: false })("/caf%C3%A9")).to…
+       |                                                              ^
+     47|   });
+     48|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > бите %-кодування в параметрі
+AssertionError: expected [Function] to throw error including '?' but got 'URI malformed'
+
+Expected: "?"
+Received: "URI malformed"
+
+ ❯ src/characterization.spec.ts:52:46
+     50|   // ВХІД: src/cases.spec.ts L486 (/caf%C3%A9) з обрізаним оста…
+     51|   it("бите %-кодування в параметрі", () => {
+     52|     expect(() => match("/:test")("/caf%C3")).toThrowError("?");
+       |                                              ^
+     53|   });
+     54|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  src/characterization.spec.ts > match() — поточна поведінка (характеризація) > бите %-кодування у wildcard
+AssertionError: expected [Function] to throw error including '?' but got 'URI malformed'
+
+Expected: "?"
+Received: "URI malformed"
+
+ ❯ src/characterization.spec.ts:58:51
+     56|   // ВХІД: Readme.md L39 (wildcard) + той самий обрізаний байт
+     57|   it("бите %-кодування у wildcard", () => {
+     58|     expect(() => match("/*splat")("/bar/caf%C3")).toThrowError(…
+       |                                                   ^
+     59|   });
+     60| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed (8)
+   Start at  19:21:46
+   Duration  156ms (transform 54%, tests 22%, import 18%, worker 6%)
+
+lizaefremenko@MacBook-Pro-Liza path-to-regexp % 
