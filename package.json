@@ -37,6 +37,8 @@
   "devDependencies": {
     "@borderless/ts-scripts": "^0.15.0",
     "@size-limit/preset-small-lib": "^14.2.0",
+    "@stryker-mutator/core": "^10.1.1",
+    "@stryker-mutator/vitest-runner": "^10.1.1",
     "@types/node": "^26.6.5",
     "@types/semver": "^7.8.0",
     "@vitest/coverage-v8": "^5.0.5",

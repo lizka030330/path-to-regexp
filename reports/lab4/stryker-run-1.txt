@@ -1,0 +1,28 @@
+[32m19:30:38 (6595) INFO ProjectReader[39m No incremental result file found at reports/stryker-incremental.json, a full mutation testing run will be performed.
+[32m19:30:38 (6595) INFO ProjectReader[39m Found 1 of 56 file(s) to be mutated.
+[32m19:30:38 (6595) INFO Instrumenter[39m Instrumented 1 source file(s) with 511 mutant(s)
+[91m19:30:38 (6595) ERROR Stryker[39m Unexpected error occurred while running Stryker TypeError: ts.parseConfigFileTextToJson is not a function
+    at TSConfigPreprocessor.rewriteTSConfigFile (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/sandbox/ts-config-preprocessor.js:46:39)
+    at async TSConfigPreprocessor.preprocess (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/sandbox/ts-config-preprocessor.js:36:13)
+    at async MultiPreprocessor.preprocess (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/sandbox/multi-preprocessor.js:8:13)
+    at async MutantInstrumenterExecutor.execute (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/process/2-mutant-instrumenter-executor.js:30:9)
+    at async Stryker.run (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/stryker.js:49:48)
+    at async Stryker.runMutationTest (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/stryker.js:27:20)
+    at async Command.<anonymous> (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/stryker-cli.js:51:13)
+[32m19:30:38 (6595) INFO Stryker[39m This might be a known problem with a solution documented in our troubleshooting guide.
+[32m19:30:38 (6595) INFO Stryker[39m You can find it at https://stryker-mutator.io/docs/stryker-js/troubleshooting/
+[32m19:30:38 (6595) INFO Stryker[39m Still having trouble figuring out what went wrong? Try `npx stryker run --fileLogLevel trace --logLevel debug` to get some more info.
+node:internal/process/promises:394
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+TypeError: ts.parseConfigFileTextToJson is not a function
+    at TSConfigPreprocessor.rewriteTSConfigFile (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/sandbox/ts-config-preprocessor.js:46:39)
+    at async TSConfigPreprocessor.preprocess (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/sandbox/ts-config-preprocessor.js:36:13)
+    at async MultiPreprocessor.preprocess (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/sandbox/multi-preprocessor.js:8:13)
+    at async MutantInstrumenterExecutor.execute (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/process/2-mutant-instrumenter-executor.js:30:9)
+    at async Stryker.run (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/stryker.js:49:48)
+    at async Stryker.runMutationTest (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/stryker.js:27:20)
+    at async Command.<anonymous> (file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/node_modules/@stryker-mutator/core/dist/src/stryker-cli.js:51:13)
+
+Node.js v24.21.0

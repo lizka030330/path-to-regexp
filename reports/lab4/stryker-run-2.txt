@@ -1,0 +1,775 @@
+[32m19:31:44 (6903) INFO ProjectReader[39m No incremental result file found at reports/stryker-incremental.json, a full mutation testing run will be performed.
+[32m19:31:44 (6903) INFO ProjectReader[39m Found 1 of 57 file(s) to be mutated.
+[32m19:31:45 (6903) INFO Instrumenter[39m Instrumented 1 source file(s) with 511 mutant(s)
+[32m19:31:45 (6903) INFO ConcurrencyTokenProvider[39m Creating 4 test runner process(es).
+[32m19:31:45 (6903) INFO BroadcastReporter[39m Detected that current console does not support the "progress" reporter, downgrading to "progress-append-only" reporter
+[32m19:31:45 (6903) INFO DryRunExecutor[39m Starting initial test run (vitest test runner with "perTest" coverage analysis). This may take a while.
+[32m19:31:54 (6903) INFO DryRunExecutor[39m Initial test run succeeded. Ran 555 tests in 8 seconds (net 8217.412753999999 ms, overhead 465.58724600000096 ms).
+[33m19:31:54 (6903) WARN MutantTestPlanner[39m Detected 266 static mutants (52% of total) that are estimated to take 100% of the time running the tests!
+  You might want to enable "ignoreStatic" to ignore these static mutants for your next run. 
+  For more information about static mutants visit: https://stryker-mutator.io/docs/mutation-testing-elements/static-mutants
+  (disable "warnings.slow" to ignore this warning)
+Mutation testing 6% (elapsed: <1m, remaining: ~2m) 263/511 tested (11 survived, 8 timed out)
+Mutation testing 59% (elapsed: <1m, remaining: <1m) 404/511 tested (11 survived, 15 timed out)
+Mutation testing 71% (elapsed: <1m, remaining: <1m) 434/511 tested (14 survived, 16 timed out)
+Mutation testing 77% (elapsed: <1m, remaining: <1m) 450/511 tested (15 survived, 16 timed out)
+Mutation testing 93% (elapsed: <1m, remaining: <1m) 494/511 tested (16 survived, 17 timed out)
+Mutation testing 95% (elapsed: ~1m, remaining: <1m) 499/511 tested (19 survived, 17 timed out)
+Mutation testing 96% (elapsed: ~1m, remaining: <1m) 503/511 tested (21 survived, 17 timed out)
+Mutation testing 99% (elapsed: ~1m, remaining: n/a) 509/511 tested (23 survived, 17 timed out)
+
+All tests
+  characterization.spec.ts
+    ~ match() — поточна поведінка (характеризація) > два параметри з README [line 18] (covered 226)
+    ~ match() — поточна поведінка (характеризація) > wildcard з README [line 28] (covered 202)
+    ~ match() — поточна поведінка (характеризація) > необовʼязкова група без параметра [line 38] (covered 234)
+    ~ match() — поточна поведінка (характеризація) > адреса, що не підходить під шаблон [line 48] (covered 216)
+    ~ match() — поточна поведінка (характеризація) > коректне %-кодування декодується один раз [line 55] (covered 218)
+    ~ match() — поточна поведінка (характеризація) > decode: false лишає параметр сирим [line 65] (covered 214)
+    ~ match() — поточна поведінка (характеризація) > бите %-кодування в параметрі [line 76] (covered 216)
+    ~ match() — поточна поведінка (характеризація) > бите %-кодування у wildcard [line 84] (covered 200)
+  index.spec.ts
+    ✓ path-to-regexp > PathError > should contain original path and debug url [line 23] (killed 3)
+    ✓ path-to-regexp > PathError > should omit original url when undefined [line 36] (killed 1)
+    ✓ path-to-regexp > parse errors > should throw on unbalanced group: /{ [line 51] (killed 23)
+    ✓ path-to-regexp > parse errors > should throw on unbalanced group: /{:foo, [line 51] (killed 7)
+    ✓ path-to-regexp > parse errors > should throw on unbalanced group: /{:foo/{x,y} [line 51] (killed 2)
+    ✓ path-to-regexp > parse errors > should throw on missing param name [line 63] (killed 12)
+    ✓ path-to-regexp > parse errors > should throw on missing wildcard name [line 69] (killed 2)
+    ✓ path-to-regexp > parse errors > should throw on unterminated quote [line 75] (killed 8)
+    ✓ path-to-regexp > parse errors > should throw on eol backslash [line 81] (killed 7)
+    ~ path-to-regexp > parse errors > should throw on eol backslash in group [line 87] (covered 57)
+    ~ path-to-regexp > parse errors > should throw on eol backslash after param [line 93] (covered 71)
+    ~ path-to-regexp > parse errors > should throw on eol backslash after wildcard [line 99] (covered 71)
+    ~ path-to-regexp > parse errors > should throw on eol backslash in quoted param [line 105] (covered 72)
+    ✓ path-to-regexp > parse errors > should throw on unexpected character } [line 111] (killed 7)
+    ~ path-to-regexp > parse errors > should throw on unexpected character ( [line 111] (covered 42)
+    ~ path-to-regexp > parse errors > should throw on unexpected character ) [line 111] (covered 42)
+    ~ path-to-regexp > parse errors > should throw on unexpected character [ [line 111] (covered 42)
+    ~ path-to-regexp > parse errors > should throw on unexpected character ] [line 111] (covered 42)
+    ~ path-to-regexp > parse errors > should throw on unexpected character + [line 111] (covered 42)
+    ~ path-to-regexp > parse errors > should throw on unexpected character ? [line 111] (covered 42)
+    ~ path-to-regexp > parse errors > should throw on unexpected character ! [line 111] (covered 42)
+    ✓ path-to-regexp > compile errors > should throw when a param is missing [line 122] (killed 32)
+    ✓ path-to-regexp > compile errors > should throw when expecting a repeated value [line 130] (killed 15)
+    ✓ path-to-regexp > compile errors > should throw when param gets an array [line 138] (killed 9)
+    ✓ path-to-regexp > compile errors > should throw when a wildcard is not an array [line 146] (killed 4)
+    ✓ path-to-regexp > compile errors > should throw when a wildcard array value is not a string [line 154] (killed 9)
+    ✓ path-to-regexp > compile errors > should throw when a wildcard array yields an empty path [line 162] (killed 14)
+    ✓ path-to-regexp > pathToRegexp errors > should throw when missing text between params [line 172] (killed 49)
+    ✓ path-to-regexp > pathToRegexp errors > should throw when missing text between params using TokenData [line 178] (killed 7)
+    ~ path-to-regexp > pathToRegexp errors > should throw with `originalPath` when missing text between params using TokenData [line 189] (covered 117)
+    ✓ path-to-regexp > pathToRegexp errors > should contain the error line [line 201] (killed 2)
+    ✓ path-to-regexp > pathToRegexp errors > should throw when too many alternative routes are generated [line 215] (killed 9)
+    ✓ path-to-regexp > stringify errors > should error on unknown token [line 225] (killed 13)
+    ✓ path-to-regexp > parse / with undefined > should parse the path [line 235] (killed 6)
+    ✓ path-to-regexp > parse /:test with undefined > should parse the path [line 235] (killed 2)
+    ~ path-to-regexp > parse /:a:b with undefined > should parse the path [line 235] (covered 65)
+    ✓ path-to-regexp > parse /:"0" with undefined > should parse the path [line 235] (killed 9)
+    ~ path-to-regexp > parse /:_ with undefined > should parse the path [line 235] (covered 65)
+    ~ path-to-regexp > parse /:café with undefined > should parse the path [line 235] (covered 65)
+    ~ path-to-regexp > parse /:"123" with undefined > should parse the path [line 235] (covered 83)
+    ✓ path-to-regexp > parse /:"1\"\2\"3" with undefined > should parse the path [line 235] (killed 2)
+    ~ path-to-regexp > parse /*path with undefined > should parse the path [line 235] (covered 65)
+    ~ path-to-regexp > parse /:"test"stuff with undefined > should parse the path [line 235] (covered 83)
+    ✓ path-to-regexp > parse \\:test with undefined > should parse the path [line 235] (killed 2)
+    ✓ path-to-regexp > stringify undefined with undefined > should stringify the path [line 245] (killed 52)
+    ✓ path-to-regexp > stringify param followed by empty text > should preserve the name before "bar" [line 260] (killed 10)
+    ~ path-to-regexp > stringify param followed by empty text > should preserve the name before "𝛼" [line 260] (covered 180)
+    ~ path-to-regexp > stringify param followed by empty text > should preserve the name before "/bar" [line 260] (covered 158)
+    ~ path-to-regexp > stringify param followed by empty text > should preserve the name before "" [line 260] (covered 156)
+    ✓ path-to-regexp > stringify wildcard followed by empty text > should preserve the name before "bar" [line 260] (killed 2)
+    ~ path-to-regexp > stringify wildcard followed by empty text > should preserve the name before "𝛼" [line 260] (covered 205)
+    ~ path-to-regexp > stringify wildcard followed by empty text > should preserve the name before "/bar" [line 260] (covered 183)
+    ~ path-to-regexp > stringify wildcard followed by empty text > should preserve the name before "" [line 260] (covered 181)
+    ✓ path-to-regexp > compile / with undefined > should compile undefined [line 282] (killed 2)
+    ~ path-to-regexp > compile / with undefined > should compile {} [line 282] (covered 67)
+    ~ path-to-regexp > compile / with undefined > should compile { id: '123' } [line 282] (covered 67)
+    ~ path-to-regexp > compile /test with undefined > should compile undefined [line 282] (covered 67)
+    ~ path-to-regexp > compile /test with undefined > should compile {} [line 282] (covered 67)
+    ~ path-to-regexp > compile /test with undefined > should compile { id: '123' } [line 282] (covered 67)
+    ~ path-to-regexp > compile /test/ with undefined > should compile undefined [line 282] (covered 67)
+    ~ path-to-regexp > compile /test/ with undefined > should compile {} [line 282] (covered 67)
+    ~ path-to-regexp > compile /test/ with undefined > should compile { id: '123' } [line 282] (covered 67)
+    ~ path-to-regexp > compile /:"0" with undefined > should compile undefined [line 282] (covered 127)
+    ~ path-to-regexp > compile /:"0" with undefined > should compile {} [line 282] (covered 127)
+    ~ path-to-regexp > compile /:"0" with undefined > should compile { '0': '123' } [line 282] (covered 129)
+    ~ path-to-regexp > compile /:test with undefined > should compile undefined [line 282] (covered 109)
+    ~ path-to-regexp > compile /:test with undefined > should compile {} [line 282] (covered 109)
+    ✓ path-to-regexp > compile /:test with undefined > should compile { test: '' } [line 282] (killed 2)
+    ~ path-to-regexp > compile /:test with undefined > should compile { test: '123' } [line 282] (covered 111)
+    ✓ path-to-regexp > compile /:test with undefined > should compile { test: '123/xyz' } [line 282] (killed 1)
+    ~ path-to-regexp > compile /:test with { encode: false } > should compile undefined [line 282] (covered 109)
+    ~ path-to-regexp > compile /:test with { encode: false } > should compile {} [line 282] (covered 109)
+    ~ path-to-regexp > compile /:test with { encode: false } > should compile { test: '123' } [line 282] (covered 111)
+    ~ path-to-regexp > compile /:test with { encode: false } > should compile { test: '123/xyz' } [line 282] (covered 111)
+    ~ path-to-regexp > compile /:test with { encode: [Function encode] } > should compile undefined [line 282] (covered 109)
+    ~ path-to-regexp > compile /:test with { encode: [Function encode] } > should compile {} [line 282] (covered 109)
+    ~ path-to-regexp > compile /:test with { encode: [Function encode] } > should compile { test: '123' } [line 282] (covered 111)
+    ~ path-to-regexp > compile /:test with { encode: [Function encode] } > should compile { test: '123/xyz' } [line 282] (covered 111)
+    ✓ path-to-regexp > compile {/:test} with { encode: false } > should compile undefined [line 282] (killed 7)
+    ~ path-to-regexp > compile {/:test} with { encode: false } > should compile {} [line 282] (covered 119)
+    ~ path-to-regexp > compile {/:test} with { encode: false } > should compile { test: undefined } [line 282] (covered 119)
+    ✓ path-to-regexp > compile {/:test} with { encode: false } > should compile { test: '123' } [line 282] (killed 1)
+    ~ path-to-regexp > compile {/:test} with { encode: false } > should compile { test: '123/xyz' } [line 282] (covered 123)
+    ✓ path-to-regexp > compile /*test with undefined > should compile undefined [line 282] (killed 1)
+    ~ path-to-regexp > compile /*test with undefined > should compile {} [line 282] (covered 113)
+    ~ path-to-regexp > compile /*test with undefined > should compile { test: [] } [line 282] (covered 113)
+    ~ path-to-regexp > compile /*test with undefined > should compile { test: [ '' ] } [line 282] (covered 131)
+    ~ path-to-regexp > compile /*test with undefined > should compile { test: [ '123' ] } [line 282] (covered 131)
+    ✓ path-to-regexp > compile /*test with undefined > should compile { test: [ '123', 'xyz' ] } [line 282] (killed 3)
+    ✓ path-to-regexp > compile /*test with { encode: false } > should compile { test: '123' } [line 282] (killed 2)
+    ~ path-to-regexp > compile /*test with { encode: false } > should compile { test: '123/xyz' } [line 282] (covered 114)
+    ~ path-to-regexp > compile { tokens: [ [Object], [Object] ] } with undefined > should compile { test: '123' } [line 282] (covered 46)
+    ✓ path-to-regexp > match / with undefined > should match / [line 297] (killed 13)
+    ✓ path-to-regexp > match / with undefined > should match /route [line 297] (killed 3)
+    ✓ path-to-regexp > match /test with undefined > should match /test [line 297] (killed 4)
+    ~ path-to-regexp > match /test with undefined > should match /route [line 297] (covered 130)
+    ✓ path-to-regexp > match /test with undefined > should match /test/route [line 297] (killed 1)
+    ✓ path-to-regexp > match /test with undefined > should match /test/ [line 297] (killed 5)
+    ✓ path-to-regexp > match /test with undefined > should match /TEST/ [line 297] (killed 2)
+    ~ path-to-regexp > match /test/ with undefined > should match /test/ [line 297] (covered 129)
+    ~ path-to-regexp > match /test/ with undefined > should match /route [line 297] (covered 126)
+    ~ path-to-regexp > match /test/ with undefined > should match /test [line 297] (covered 126)
+    ✓ path-to-regexp > match /test/ with undefined > should match /test// [line 297] (killed 2)
+    ✓ path-to-regexp > match /:test with undefined > should match /route [line 297] (killed 20)
+    ✓ path-to-regexp > match /:test with undefined > should match /route/ [line 297] (killed 3)
+    ~ path-to-regexp > match /:test with undefined > should match /route.json [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with undefined > should match /route.json/ [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with undefined > should match /route/test [line 297] (covered 208)
+    ✓ path-to-regexp > match /:test with undefined > should match /caf%C3%A9 [line 297] (killed 2)
+    ~ path-to-regexp > match /:test with undefined > should match /;,:@&=+$-_.!~*() [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with undefined > should match /param%2523 [line 297] (covered 218)
+    ✓ path-to-regexp > match /test with { sensitive: true } > should match /test [line 297] (killed 1)
+    ~ path-to-regexp > match /test with { sensitive: true } > should match /TEST [line 297] (covered 129)
+    ~ path-to-regexp > match /TEST with { sensitive: true } > should match /test [line 297] (covered 129)
+    ~ path-to-regexp > match /TEST with { sensitive: true } > should match /TEST [line 297] (covered 132)
+    ~ path-to-regexp > match /test with { trailing: false } > should match /test [line 297] (covered 126)
+    ~ path-to-regexp > match /test with { trailing: false } > should match /test/ [line 297] (covered 123)
+    ~ path-to-regexp > match /test/ with { trailing: false } > should match /test/ [line 297] (covered 126)
+    ~ path-to-regexp > match /test/ with { trailing: false } > should match /test [line 297] (covered 123)
+    ~ path-to-regexp > match /:test with { trailing: false } > should match /route [line 297] (covered 211)
+    ✓ path-to-regexp > match /:test with { trailing: false } > should match /route/ [line 297] (killed 1)
+    ✓ path-to-regexp > match /*path with { trailing: false } > should match /route [line 297] (killed 13)
+    ✓ path-to-regexp > match /*path with { trailing: false } > should match /route/nested [line 297] (killed 1)
+    ~ path-to-regexp > match /*path with { trailing: false } > should match /route/nested/ [line 297] (covered 195)
+    ✓ path-to-regexp > match /test with { trailing: false, end: false } > should match /test [line 297] (killed 5)
+    ~ path-to-regexp > match /test with { trailing: false, end: false } > should match /test/route [line 297] (covered 126)
+    ✓ path-to-regexp > match {/:test}/bar with { trailing: false } > should match /bar [line 297] (killed 3)
+    ~ path-to-regexp > match {/:test}/bar with { trailing: false } > should match /foo/bar [line 297] (covered 229)
+    ~ path-to-regexp > match {/:test}/bar with { trailing: false } > should match /foo/bar/ [line 297] (covered 219)
+    ~ path-to-regexp > match /test with { end: false } > should match /test [line 297] (covered 133)
+    ~ path-to-regexp > match /test with { end: false } > should match /test/ [line 297] (covered 133)
+    ~ path-to-regexp > match /test with { end: false } > should match /test//// [line 297] (covered 133)
+    ~ path-to-regexp > match /test with { end: false } > should match /route/test [line 297] (covered 130)
+    ~ path-to-regexp > match /test with { end: false } > should match /test/route [line 297] (covered 133)
+    ~ path-to-regexp > match /test with { end: false } > should match /route [line 297] (covered 130)
+    ~ path-to-regexp > match /test/ with { end: false } > should match /test [line 297] (covered 126)
+    ~ path-to-regexp > match /test/ with { end: false } > should match /test/ [line 297] (covered 129)
+    ~ path-to-regexp > match /test/ with { end: false } > should match /test// [line 297] (covered 129)
+    ~ path-to-regexp > match /test/ with { end: false } > should match /test/route [line 297] (covered 126)
+    ~ path-to-regexp > match /test/ with { end: false } > should match /route/test/deep [line 297] (covered 126)
+    ~ path-to-regexp > match /:test with { end: false } > should match /route [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with { end: false } > should match /route/ [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with { end: false } > should match /route.json [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with { end: false } > should match /route.json/ [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with { end: false } > should match /route/test [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with { end: false } > should match /route.json/test [line 297] (covered 218)
+    ~ path-to-regexp > match /:test with { end: false } > should match /caf%C3%A9 [line 297] (covered 218)
+    ~ path-to-regexp > match /:test/ with { end: false } > should match /route [line 297] (covered 212)
+    ~ path-to-regexp > match /:test/ with { end: false } > should match /route/ [line 297] (covered 222)
+    ~ path-to-regexp > match /:test/ with { end: false } > should match /route/test [line 297] (covered 212)
+    ~ path-to-regexp > match /:test/ with { end: false } > should match /route/test/ [line 297] (covered 212)
+    ~ path-to-regexp > match /:test/ with { end: false } > should match /route//test [line 297] (covered 222)
+    ~ path-to-regexp > match  with { end: false } > should match [line 297] (covered 84)
+    ~ path-to-regexp > match  with { end: false } > should match / [line 297] (covered 84)
+    ~ path-to-regexp > match  with { end: false } > should match route [line 297] (covered 81)
+    ~ path-to-regexp > match  with { end: false } > should match /route [line 297] (covered 84)
+    ~ path-to-regexp > match  with { end: false } > should match /route/ [line 297] (covered 84)
+    ~ path-to-regexp > match {/route} with undefined > should match [line 297] (covered 143)
+    ~ path-to-regexp > match {/route} with undefined > should match / [line 297] (covered 143)
+    ~ path-to-regexp > match {/route} with undefined > should match /foo [line 297] (covered 140)
+    ✓ path-to-regexp > match {/route} with undefined > should match /route [line 297] (killed 1)
+    ~ path-to-regexp > match {/:test} with undefined > should match /route [line 297] (covered 228)
+    ~ path-to-regexp > match {/:test} with undefined > should match [line 297] (covered 226)
+    ~ path-to-regexp > match {/:test} with undefined > should match / [line 297] (covered 226)
+    ~ path-to-regexp > match {/:test}/bar with undefined > should match /bar [line 297] (covered 234)
+    ~ path-to-regexp > match {/:test}/bar with undefined > should match /foo/bar [line 297] (covered 236)
+    ~ path-to-regexp > match {/:test}/bar with undefined > should match /foo/bar/ [line 297] (covered 236)
+    ~ path-to-regexp > match {/:test}-bar with undefined > should match -bar [line 297] (covered 235)
+    ~ path-to-regexp > match {/:test}-bar with undefined > should match /foo-bar [line 297] (covered 237)
+    ~ path-to-regexp > match {/:test}-bar with undefined > should match /foo-bar/ [line 297] (covered 237)
+    ~ path-to-regexp > match /{:test}-bar with undefined > should match /-bar [line 297] (covered 235)
+    ✓ path-to-regexp > match /{:test}-bar with undefined > should match /foo-bar [line 297] (killed 1)
+    ~ path-to-regexp > match /{:test}-bar with undefined > should match /foo-bar/ [line 297] (covered 237)
+    ~ path-to-regexp > match test with undefined > should match test [line 297] (covered 132)
+    ~ path-to-regexp > match test with undefined > should match /test [line 297] (covered 129)
+    ~ path-to-regexp > match :test with undefined > should match route [line 297] (covered 196)
+    ~ path-to-regexp > match :test with undefined > should match /route [line 297] (covered 186)
+    ~ path-to-regexp > match :test with undefined > should match route/ [line 297] (covered 196)
+    ~ path-to-regexp > match {:test} with undefined > should match test [line 297] (covered 213)
+    ✓ path-to-regexp > match {:test} with undefined > should match [line 297] (killed 1)
+    ~ path-to-regexp > match /test.json with undefined > should match /test.json [line 297] (covered 133)
+    ~ path-to-regexp > match /test.json with undefined > should match /test [line 297] (covered 130)
+    ~ path-to-regexp > match /:test.json with undefined > should match /.json [line 297] (covered 217)
+    ~ path-to-regexp > match /:test.json with undefined > should match /test.json [line 297] (covered 227)
+    ~ path-to-regexp > match /:test.json with undefined > should match /route.json [line 297] (covered 227)
+    ✓ path-to-regexp > match /:test.json with undefined > should match /route.json.json [line 297] (killed 1)
+    ✓ path-to-regexp > match /:a-:b with undefined > should match /one-two-three [line 297] (killed 9)
+    ~ path-to-regexp > match /:a-:b with undefined > should match /-one-two [line 297] (covered 230)
+    ~ path-to-regexp > match /:file.txt with undefined > should match /report.txt [line 297] (covered 227)
+    ~ path-to-regexp > match /:file.txt with undefined > should match /report.txt.txt [line 297] (covered 227)
+    ✓ path-to-regexp > match /:test.:format with undefined > should match /route.html [line 297] (killed 1)
+    ~ path-to-regexp > match /:test.:format with undefined > should match /route [line 297] (covered 220)
+    ~ path-to-regexp > match /:test.:format with undefined > should match /route.html.json [line 297] (covered 230)
+    ~ path-to-regexp > match /:test{.:format} with undefined > should match /route [line 297] (covered 240)
+    ~ path-to-regexp > match /:test{.:format} with undefined > should match /route.json [line 297] (covered 240)
+    ~ path-to-regexp > match /:test{.:format} with undefined > should match /route.json.html [line 297] (covered 240)
+    ~ path-to-regexp > match /:test.:format\z with undefined > should match /route.htmlz [line 297] (covered 236)
+    ~ path-to-regexp > match /:test.:format\z with undefined > should match /route.html [line 297] (covered 226)
+    ~ path-to-regexp > match /\(testing\) with undefined > should match /testing [line 297] (covered 136)
+    ~ path-to-regexp > match /\(testing\) with undefined > should match /(testing) [line 297] (covered 139)
+    ~ path-to-regexp > match /.\+\*\?\{\}=^\!\:$\[\]\| with undefined > should match /.+*?{}=^!:$[]| [line 297] (covered 139)
+    ~ path-to-regexp > match /:foo/:bar with undefined > should match /match/route [line 297] (covered 226)
+    ~ path-to-regexp > match /:foo\(test\)/bar with undefined > should match /foo(test)/bar [line 297] (covered 232)
+    ~ path-to-regexp > match /:foo\(test\)/bar with undefined > should match /foo/bar [line 297] (covered 222)
+    ~ path-to-regexp > match /:foo\? with undefined > should match /route? [line 297] (covered 233)
+    ~ path-to-regexp > match /:foo\? with undefined > should match /route [line 297] (covered 223)
+    ~ path-to-regexp > match /{:pre}baz with undefined > should match /foobaz [line 297] (covered 237)
+    ~ path-to-regexp > match /{:pre}baz with undefined > should match /baz [line 297] (covered 235)
+    ~ path-to-regexp > match /:foo\(:bar\) with undefined > should match /hello(world) [line 297] (covered 236)
+    ~ path-to-regexp > match /:foo\(:bar\) with undefined > should match /hello() [line 297] (covered 226)
+    ~ path-to-regexp > match /:foo\({:bar}\) with undefined > should match /hello(world) [line 297] (covered 246)
+    ~ path-to-regexp > match /:foo\({:bar}\) with undefined > should match /hello() [line 297] (covered 246)
+    ~ path-to-regexp > match {/:foo}{/:bar}-ext with undefined > should match /-ext [line 297] (covered 227)
+    ~ path-to-regexp > match {/:foo}{/:bar}-ext with undefined > should match -ext [line 297] (covered 235)
+    ~ path-to-regexp > match {/:foo}{/:bar}-ext with undefined > should match /foo-ext [line 297] (covered 237)
+    ~ path-to-regexp > match {/:foo}{/:bar}-ext with undefined > should match /foo/bar-ext [line 297] (covered 237)
+    ~ path-to-regexp > match {/:foo}{/:bar}-ext with undefined > should match /foo/-ext [line 297] (covered 227)
+    ~ path-to-regexp > match /:required{/:optional}-ext with undefined > should match /foo-ext [line 297] (covered 237)
+    ~ path-to-regexp > match /:required{/:optional}-ext with undefined > should match /foo/bar-ext [line 297] (covered 237)
+    ~ path-to-regexp > match /:required{/:optional}-ext with undefined > should match /foo/-ext [line 297] (covered 227)
+    ~ path-to-regexp > match /:foo with undefined > should match /café [line 297] (covered 218)
+    ✓ path-to-regexp > match /:foo with { decode: false } > should match /caf%C3%A9 [line 297] (killed 2)
+    ~ path-to-regexp > match /café with undefined > should match /café [line 297] (covered 133)
+    ~ path-to-regexp > match /café with { encodePath: [Function encodeURI] } > should match /caf%C3%A9 [line 297] (covered 133)
+    ~ path-to-regexp > match :domain.com with { delimiter: '.' } > should match example.com [line 297] (covered 225)
+    ~ path-to-regexp > match :domain.com with { delimiter: '.' } > should match github.com [line 297] (covered 225)
+    ~ path-to-regexp > match mail.:domain.com with { delimiter: '.' } > should match mail.example.com [line 297] (covered 226)
+    ~ path-to-regexp > match mail.:domain.com with { delimiter: '.' } > should match mail.github.com [line 297] (covered 226)
+    ~ path-to-regexp > match mail{.:domain}.com with { delimiter: '.' } > should match mail.com [line 297] (covered 234)
+    ~ path-to-regexp > match mail{.:domain}.com with { delimiter: '.' } > should match mail.example.com [line 297] (covered 236)
+    ~ path-to-regexp > match mail{.:domain}.com with { delimiter: '.' } > should match mail.github.com [line 297] (covered 236)
+    ~ path-to-regexp > match example.:ext with { delimiter: '.' } > should match example.com [line 297] (covered 218)
+    ~ path-to-regexp > match example.:ext with { delimiter: '.' } > should match example.org [line 297] (covered 218)
+    ~ path-to-regexp > match this is with { delimiter: ' ', end: false } > should match this is a test [line 297] (covered 133)
+    ~ path-to-regexp > match this is with { delimiter: ' ', end: false } > should match this isn't [line 297] (covered 130)
+    ~ path-to-regexp > match $:foo{$:bar} with undefined > should match $x [line 297] (covered 239)
+    ~ path-to-regexp > match $:foo{$:bar} with undefined > should match $x$y [line 297] (covered 239)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name [line 297] (covered 238)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name/test [line 297] (covered 240)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name/1 [line 297] (covered 240)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name/1-2 [line 297] (covered 240)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name/1-2-3 [line 297] (covered 240)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name/foo-bar/route [line 297] (covered 230)
+    ~ path-to-regexp > match name{/:attr1}{-:attr2}{-:attr3} with undefined > should match name/test/route [line 297] (covered 230)
+    ~ path-to-regexp > match /user{s}/:user with undefined > should match /user/123 [line 297] (covered 228)
+    ~ path-to-regexp > match /user{s}/:user with undefined > should match /users/123 [line 297] (covered 228)
+    ~ path-to-regexp > match /*path with undefined > should match / [line 297] (covered 192)
+    ~ path-to-regexp > match /*path with undefined > should match /route [line 297] (covered 202)
+    ~ path-to-regexp > match /*path with undefined > should match /route/nested [line 297] (covered 202)
+    ~ path-to-regexp > match *path with undefined > should match / [line 297] (covered 183)
+    ~ path-to-regexp > match *path with undefined > should match /test [line 297] (covered 183)
+    ~ path-to-regexp > match *path with { decode: false } > should match / [line 297] (covered 178)
+    ~ path-to-regexp > match *path with { decode: false } > should match /test [line 297] (covered 178)
+    ✓ path-to-regexp > match /*path.:ext with undefined > should match /test.html [line 297] (killed 7)
+    ~ path-to-regexp > match /*path.:ext with undefined > should match /test.html/nested [line 297] (covered 222)
+    ~ path-to-regexp > match /*path.:ext with undefined > should match /test.html/nested.json [line 297] (covered 232)
+    ~ path-to-regexp > match /:path.*ext with undefined > should match /test.html [line 297] (covered 244)
+    ~ path-to-regexp > match /:path.*ext with undefined > should match /test.html/nested [line 297] (covered 244)
+    ~ path-to-regexp > match /:path.*ext with undefined > should match /test.html/nested.json [line 297] (covered 244)
+    ~ path-to-regexp > match /*path{.:ext} with undefined > should match /test.html [line 297] (covered 242)
+    ~ path-to-regexp > match /*path{.:ext} with undefined > should match /test/nested.html [line 297] (covered 242)
+    ~ path-to-regexp > match /*path{.:ext} with undefined > should match /test.html/nested [line 297] (covered 242)
+    ~ path-to-regexp > match /entity/:id/*path with undefined > should match /entity/foo [line 297] (covered 233)
+    ~ path-to-regexp > match /entity/:id/*path with undefined > should match /entity/foo/path [line 297] (covered 243)
+    ✓ path-to-regexp > match /*foo/:bar/*baz with undefined > should match /x/y/z [line 297] (killed 6)
+    ✓ path-to-regexp > match /*foo/:bar/*baz with undefined > should match /1/2/3/4/5 [line 297] (killed 5)
+    ✓ path-to-regexp > match /*a/:b.:c with undefined > should match /x/one.two.three [line 297] (killed 1)
+    ~ path-to-regexp > match /*a/:b.:c/*d with undefined > should match /x/name.ext/p/q/r [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/:b.:c/*d with undefined > should match /x/name.ext/p [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/:b.:c/*d with undefined > should match /x/y/z/name.ext/name2.ext2/p/q/r [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/:b.:c/*d with undefined > should match /x/x/name.ext/ext/x/x [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/:b.:c/*d with undefined > should match /x/x/name.ext/name.ext/x/x/ [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/:b.:c/*d with undefined > should match /x/x/name.ext//name.ext/x/x/ [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/_/:b.:c/*d with undefined > should match /x/_/name.ext/p/q/r [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/_/:b.:c/*d with undefined > should match /x/_/name.ext/p [line 297] (covered 256)
+    ~ path-to-regexp > match /*a/:b.:c/*d/ with undefined > should match /x/name.ext/p/q/r/ [line 297] (covered 252)
+    ~ path-to-regexp > match /*a/:b.:c/*d/ with undefined > should match /x/name.ext/p/ [line 297] (covered 252)
+    ~ path-to-regexp > match {*path} with undefined > should match [line 297] (covered 195)
+    ~ path-to-regexp > match {*path} with undefined > should match / [line 297] (covered 197)
+    ~ path-to-regexp > match {*path} with undefined > should match /test [line 297] (covered 197)
+    ~ path-to-regexp > match {*path} with undefined > should match /test/nested [line 297] (covered 197)
+    ~ path-to-regexp > match {*path} with { end: false } > should match [line 297] (covered 195)
+    ~ path-to-regexp > match {*path} with { end: false } > should match / [line 297] (covered 197)
+    ~ path-to-regexp > match {*path} with { end: false } > should match /test [line 297] (covered 197)
+    ~ path-to-regexp > match {*path} with { end: false } > should match /test/nested [line 297] (covered 197)
+    ~ path-to-regexp > match /*path with { end: false } > should match [line 297] (covered 192)
+    ~ path-to-regexp > match /*path with { end: false } > should match / [line 297] (covered 192)
+    ~ path-to-regexp > match /*path with { end: false } > should match /test [line 297] (covered 202)
+    ~ path-to-regexp > match /*path with { end: false } > should match /test/nested [line 297] (covered 202)
+    ~ path-to-regexp > match /*path/ with { end: false } > should match /foo/bar/ [line 297] (covered 204)
+    ~ path-to-regexp > match /*path/ with { end: false } > should match /foo/bar/baz [line 297] (covered 194)
+    ~ path-to-regexp > match /*path/ with { end: false } > should match /foo/bar/baz/ [line 297] (covered 204)
+    ~ path-to-regexp > match /*path.:ext with { end: false } > should match /foo/bar.html [line 297] (covered 232)
+    ~ path-to-regexp > match /*path.:ext with { end: false } > should match /foo/bar.html/baz [line 297] (covered 232)
+    ~ path-to-regexp > match /*path.:ext with { end: false } > should match /foo/bar.html/baz.html [line 297] (covered 232)
+    ~ path-to-regexp > match /:foo{/test/:bar} with undefined > should match /route [line 297] (covered 236)
+    ~ path-to-regexp > match /:foo{/test/:bar} with undefined > should match /route/test/again [line 297] (covered 236)
+    ~ path-to-regexp > match {:foo/}{:bar.} with undefined > should match [line 297] (covered 235)
+    ~ path-to-regexp > match {:foo/}{:bar.} with undefined > should match test/ [line 297] (covered 237)
+    ~ path-to-regexp > match {:foo/}{:bar.} with undefined > should match a/b. [line 297] (covered 237)
+    ~ path-to-regexp > match /abc{abc:foo} with undefined > should match /abc [line 297] (covered 226)
+    ~ path-to-regexp > match /abc{abc:foo} with undefined > should match /abcabc [line 297] (covered 218)
+    ~ path-to-regexp > match /abc{abc:foo} with undefined > should match /abcabc123 [line 297] (covered 228)
+    ~ path-to-regexp > match /abc{abc:foo} with undefined > should match /abcabcabc123 [line 297] (covered 228)
+    ~ path-to-regexp > match /abc{abc:foo} with undefined > should match /abcabcabc [line 297] (covered 228)
+    ~ path-to-regexp > match /:foo{abc:bar} with undefined > should match /abc [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo{abc:bar} with undefined > should match /abcabc [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo{abc:bar} with undefined > should match /abcabc123 [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo{abc:bar} with undefined > should match /acb [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo{abc:bar} with undefined > should match /123 [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo{abc:bar} with undefined > should match /123abcabc [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo\abc:bar with undefined > should match /abc [line 297] (covered 226)
+    ~ path-to-regexp > match /:foo\abc:bar with undefined > should match /abcabc [line 297] (covered 226)
+    ~ path-to-regexp > match /:foo\abc:bar with undefined > should match /abcabc123 [line 297] (covered 236)
+    ~ path-to-regexp > match /:foo\abc:bar with undefined > should match /123abcabc [line 297] (covered 236)
+    ~ path-to-regexp > match /route|:param| with undefined > should match /route|world| [line 297] (covered 227)
+    ~ path-to-regexp > match /route|:param| with undefined > should match /route|| [line 297] (covered 217)
+    ~ path-to-regexp > match /:foo|:bar| with undefined > should match /hello|world| [line 297] (covered 230)
+    ~ path-to-regexp > match /:foo|:bar| with undefined > should match /hello|| [line 297] (covered 220)
+    ~ path-to-regexp > match /:foo{|:bar|} with undefined > should match /hello|world| [line 297] (covered 240)
+    ~ path-to-regexp > match /:foo{|:bar|} with undefined > should match /hello|| [line 297] (covered 240)
+    ~ path-to-regexp > match :foo\@:bar with undefined > should match x@y [line 297] (covered 224)
+    ~ path-to-regexp > match :foo\@:bar with undefined > should match x@ [line 297] (covered 214)
+    ~ path-to-regexp > match /*foo-:bar with undefined > should match /a [line 297] (covered 222)
+    ~ path-to-regexp > match /*foo-:bar with undefined > should match /a-b [line 297] (covered 232)
+    ~ path-to-regexp > match /*foo-:bar with undefined > should match /a-b-c-d [line 297] (covered 232)
+    ~ path-to-regexp > match /*foo-*bar-:baz with undefined > should match /a [line 297] (covered 225)
+    ~ path-to-regexp > match /*foo-*bar-:baz with undefined > should match /a-b-c [line 297] (covered 235)
+    ~ path-to-regexp > match /*foo-*bar-:baz with undefined > should match /a-b-c-d [line 297] (covered 235)
+    ~ path-to-regexp > match /*foo-:bar-*baz with undefined > should match /a [line 297] (covered 225)
+    ~ path-to-regexp > match /*foo-:bar-*baz with undefined > should match /a-b-c [line 297] (covered 235)
+    ~ path-to-regexp > match /*foo-:bar-*baz with undefined > should match /a-b-c-d [line 297] (covered 235)
+    ~ path-to-regexp > match /*foo-:bar-*baz-:qux with undefined > should match /a [line 297] (covered 225)
+    ~ path-to-regexp > match /*foo-:bar-*baz-:qux with undefined > should match /a-b-c-d [line 297] (covered 235)
+    ~ path-to-regexp > match /*foo-*bar with undefined > should match /a [line 297] (covered 201)
+    ~ path-to-regexp > match /*foo-*bar with undefined > should match /a-b [line 297] (covered 211)
+    ~ path-to-regexp > match /*foo-*bar with undefined > should match /a-b- [line 297] (covered 211)
+    ~ path-to-regexp > match /*foo-*bar with undefined > should match /a-b-c-d [line 297] (covered 211)
+    ~ path-to-regexp > match /:foo-:bar-*baz with undefined > should match /a [line 297] (covered 234)
+    ~ path-to-regexp > match /:foo-:bar-*baz with undefined > should match /a-b-c [line 297] (covered 244)
+    ~ path-to-regexp > match /:foo-:bar-*baz with undefined > should match /a-b-c-d [line 297] (covered 244)
+    ~ path-to-regexp > match /:foo-:bar-*baz-:qux with undefined > should match /a [line 297] (covered 242)
+    ~ path-to-regexp > match /:foo-:bar-*baz-:qux with undefined > should match /a-b-c [line 297] (covered 242)
+    ~ path-to-regexp > match /:foo-:bar-*baz-:qux with undefined > should match /a-b-c-d [line 297] (covered 252)
+    ~ path-to-regexp > match /:foo-:bar-*baz-:qux with undefined > should match /a-b-c-d-e [line 297] (covered 252)
+    ~ path-to-regexp > match /:foo-:bar-*baz-:qux with undefined > should match /a-b-c/d-e-f [line 297] (covered 252)
+    ~ path-to-regexp > match /*foo/:bar/*baz/:qux with undefined > should match /a/b/c/d/e [line 297] (covered 252)
+    ~ path-to-regexp > match /*foo/abc-:bar/xyz-*baz/:qux with undefined > should match /a/b/c/d/e [line 297] (covered 242)
+    ~ path-to-regexp > match /*foo/abc-:bar/xyz-*baz/:qux with undefined > should match /a/abc-x/xyz-y/z [line 297] (covered 252)
+    ~ path-to-regexp > match /*foo/abc-:bar/xyz-*baz/:qux with undefined > should match /a/abc-abc/xyz-/xyz-/z [line 297] (covered 252)
+    ~ path-to-regexp > match /*foo/abc-:bar/xyz-*baz/:qux with undefined > should match /a/abc-abc/xyz-/xyz-a/z [line 297] (covered 252)
+    ~ path-to-regexp > match /*foo/abc-:bar/xyz-*baz/:qux with undefined > should match /a/abc/abc-abc/xyz-/xyz-a/z [line 297] (covered 252)
+    ~ path-to-regexp > match /*foo/abc-:bar/xyz-*baz/:qux with undefined > should match /abc-/abc-abc/xyz-/xyz-a/z [line 297] (covered 252)
+    ~ path-to-regexp > match /*a@:b-*c with undefined > should match /foo@bar-baz [line 297] (covered 235)
+    ~ path-to-regexp > match /:a-*b.:c@*d with undefined > should match /a-b.c@d [line 297] (covered 255)
+    ~ path-to-regexp > match /:a-*b.:c@*d with undefined > should match /a-b.c [line 297] (covered 245)
+    ✓ path-to-regexp > match /:a-*b.:c@*d with undefined > should match /a-b-c.d.e@f@g [line 297] (killed 3)
+    ~ path-to-regexp > match /:a-.-*b with undefined > should match /-.-.-x [line 297] (covered 244)
+    ~ path-to-regexp > match /*a-:b with undefined > should match /a-- [line 297] (covered 232)
+    ~ path-to-regexp > match /:a--*b with undefined > should match /--x--y [line 297] (covered 244)
+    ~ path-to-regexp > match /:a%25*b with undefined > should match /%252%25x [line 297] (covered 244)
+    ~ path-to-regexp > match /:a{%25*b} with undefined > should match /%252%25x [line 297] (covered 257)
+    ~ path-to-regexp > match /:a-:b/end with undefined > should match /x-abc-/end [line 297] (covered 230)
+    ~ path-to-regexp > match /*a.:b/end with undefined > should match /x.abc./end [line 297] (covered 232)
+    ~ path-to-regexp > match /*a.:b/end with undefined > should match /x.-./end [line 297] (covered 232)
+    ~ path-to-regexp > match /:a%25:b/end with undefined > should match /x%25abc%25/end [line 297] (covered 230)
+    ~ path-to-regexp > match /:a--:b--:c with undefined > should match /x-----y [line 297] (covered 230)
+    ~ path-to-regexp > match /*a-:p.*b.:q with undefined > should match /a-b.c.d [line 297] (covered 235)
+    ~ path-to-regexp > match /*a-:p.*b.:q/end with undefined > should match /a-b.c.d/end [line 297] (covered 235)
+    ~ path-to-regexp > match /*a/:b~:c.*d with undefined > should match /x/a~..z [line 297] (covered 253)
+    ~ path-to-regexp > match /*a-:p{.*b.:q} with undefined > should match /a-b.c.d [line 297] (covered 245)
+    ~ path-to-regexp > match /*a.:p--*b with undefined > should match /a.b--- [line 297] (covered 235)
+    ✓ path-to-regexp > match /*a--*b@@:c with undefined > should match /a--b@@c [line 297] (killed 1)
+    ~ path-to-regexp > match /*a--*b@@:c with undefined > should match /a--b@@c/d [line 297] (covered 224)
+    ~ path-to-regexp > match /*a--*b@@:c with undefined > should match /a--b/c@@d--e@@f [line 297] (covered 234)
+    ~ path-to-regexp > match /*a--*b@@:c with undefined > should match /a/b@@c--d@@e [line 297] (covered 234)
+    ~ path-to-regexp > match /*a~~:b~~*c/:d with undefined > should match /a~~b~~c/d [line 297] (covered 247)
+    ~ path-to-regexp > match /*a--*b-.-:c with undefined > should match /a--b-.-c [line 297] (covered 234)
+    ~ path-to-regexp > match /*a~~*b._.:c with undefined > should match /a~~b._.c [line 297] (covered 234)
+    ~ path-to-regexp > match /*a@@*b~.~:c with undefined > should match /a@@b~.~c [line 297] (covered 234)
+    ~ path-to-regexp > match /*a-.-*b@@:c with undefined > should match /a-.-b@@c [line 297] (covered 234)
+    ~ path-to-regexp > match /*a@.@*b--:c with undefined > should match /a@.@b--c [line 297] (covered 234)
+    ~ path-to-regexp > match /*a-@-*b..:c with undefined > should match /a-@-b..c [line 297] (covered 234)
+    ~ path-to-regexp > match /x/*a/*b/y with undefined > should match /x/foo/bar/y [line 297] (covered 211)
+    ~ path-to-regexp > match /x/*a-:b/*c/y with undefined > should match /x/foo-bar/baz/y [line 297] (covered 235)
+    ~ path-to-regexp > match /x/*a-:b/*c/y with undefined > should match /x/foo-bar/baz-qux/y [line 297] (covered 235)
+    ~ path-to-regexp > match /x/*a-:b-:c/*d/y with undefined > should match /x/foo-bar-baz/qux/y [line 297] (covered 235)
+    ~ path-to-regexp > match /x/*a-:b-:c-*d/*e/y with undefined > should match /x/foo-bar-baz-qux/quux/y [line 297] (covered 235)
+    ~ path-to-regexp > match /x/*a@/*c/y with undefined > should match /x/foo@/y [line 297] (covered 201)
+    ~ path-to-regexp > match /x/*a@/*c/y with undefined > should match /x/foo@/y/y [line 297] (covered 211)
+    ~ path-to-regexp > match /x/*a@/*c/y with undefined > should match /x/foo@/y/z/y [line 297] (covered 211)
+    ~ path-to-regexp > match /:a-:b^*c@*d%:e with undefined > should match /a-b^c@d%e [line 297] (covered 255)
+    ~ path-to-regexp > match 1*a\1*b with { delimiter: '1' } > should match 1x1y [line 297] (covered 217)
+    ~ path-to-regexp > match %25:foo{%25:bar} with { delimiter: '%25' } > should match %25hello [line 297] (covered 235)
+    ~ path-to-regexp > match %25:foo{%25:bar} with { delimiter: '%25' } > should match %25hello%25world [line 297] (covered 235)
+    ✓ path-to-regexp > match %25:foo{%25:bar} with { delimiter: '%25' } > should match %25555%25222 [line 297] (killed 2)
+    ~ path-to-regexp > match %25:foo..:bar with { delimiter: '%25' } > should match %25hello..world [line 297] (covered 229)
+    ~ path-to-regexp > match %25:foo..:bar with { delimiter: '%25' } > should match %25555..222 [line 297] (covered 229)
+    ~ path-to-regexp > match %25:foo..:bar with { delimiter: '%25' } > should match %25555....222%25 [line 297] (covered 229)
+    ✓ path-to-regexp > match [ '/:foo/:bar', '/:foo/:baz' ] with undefined > should match /hello/world [line 297] (killed 3)
+    ~ path-to-regexp > match [ '/x/*a/y/*b/z', '/x/*a/y/*b/w' ] with undefined > should match /x/foo/y/bar/z [line 297] (covered 214)
+    ~ path-to-regexp > match [ '/x/*a/y/*b/z', '/x/*a/y/*b/w' ] with undefined > should match /x/foo/y/bar/w [line 297] (covered 214)
+    ~ path-to-regexp > match [ '/x/*a/y-/*b/z', '/x/*a/y-/*b/w' ] with undefined > should match /x/foo/y-/bar/z [line 297] (covered 214)
+    ~ path-to-regexp > match [ '/x/*a/y-/*b/z', '/x/*a/y-/*b/w' ] with undefined > should match /x/foo/y-/bar/w [line 297] (covered 214)
+    ~ path-to-regexp > match [ '/x/*a/:b.:c/*d/z', …(1) ] with undefined > should match /x/foo/name.ext/bar/z [line 297] (covered 259)
+    ~ path-to-regexp > match [ '/x/*a/:b.:c/*d/z', …(1) ] with undefined > should match /x/foo/name.ext/bar/w [line 297] (covered 259)
+    ~ path-to-regexp > match { tokens: [ [Object], [Object] ] } with undefined > should match /123 [line 297] (covered 153)
+  redos.spec.ts
+    ✘ redos > / - /^(?:\/)$/i [line 13] (covered 0)
+    ✘ redos > /test - /^(?:\/test(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /test/ - /^(?:\/test\/)$/i [line 13] (covered 0)
+    ✘ redos > /:test - /^(?:\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /TEST - /^(?:\/TEST(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*path - /^(?:\/([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {/:test}/bar - /^(?:\/([^\/]+)\/bar(?:\/$)?|\/bar(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:test/ - /^(?:\/([^\/]+)\/)$/i [line 13] (covered 0)
+    ✘ redos >  - /^(?:(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {/route} - /^(?:\/route(?:\/$)?|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {/:test} - /^(?:\/([^\/]+)(?:\/$)?|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {/:test}-bar - /^(?:\/([^\/]+)-bar(?:\/$)?|-bar(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /{:test}-bar - /^(?:\/([^\/]+)-bar(?:\/$)?|\/-bar(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > test - /^(?:test(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > :test - /^(?:([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {:test} - /^(?:([^\/]+)(?:\/$)?|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /test.json - /^(?:\/test\.json(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:test.json - /^(?:\/([^\/]+)\.json(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a-:b - /^(?:\/(?=([^\/]+?)-)(?:\1)-([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:file.txt - /^(?:\/([^\/]+)\.txt(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:test.:format - /^(?:\/(?=([^\/]+?)\.)(?:\1)\.([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:test{.:format} - /^(?:\/(?=([^\/]+?)\.)(?:\1)\.([^\/]+)(?:\/$)?|\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:test.:format\z - /^(?:\/(?=([^\/]+?)\.)(?:\1)\.([^\/]+)z(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /\(testing\) - /^(?:\/\(testing\)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /.\+\*\?\{\}=^\!\:$\[\]\| - /^(?:\/\.\+\*\?\{\}=\^!:\$\[\]\|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo/:bar - /^(?:\/([^\/]+)\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo\(test\)/bar - /^(?:\/([^\/]+)\(test\)\/bar(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo\? - /^(?:\/([^\/]+)\?(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /{:pre}baz - /^(?:\/([^\/]+)baz(?:\/$)?|\/baz(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo\(:bar\) - /^(?:\/(?=([^\/]+?)\()(?:\1)\(([^\/]+)\)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo\({:bar}\) - /^(?:\/(?=([^\/]+?)\()(?:\1)\(([^\/]+)\)(?:\/$)?|\/([^\/]+)\(\)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {/:foo}{/:bar}-ext - /^(?:\/([^\/]+)\/([^\/]+)-ext(?:\/$)?|\/([^\/]+)-ext(?:\/$)?|\/([^\/]+)-ext(?:\/$)?|-ext(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:required{/:optional}-ext - /^(?:\/([^\/]+)\/([^\/]+)-ext(?:\/$)?|\/([^\/]+)-ext(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo - /^(?:\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /café - /^(?:\/café(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > :domain.com - /^(?:([^\/]+)\.com(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > mail.:domain.com - /^(?:mail\.([^\/]+)\.com(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > mail{.:domain}.com - /^(?:mail\.([^\/]+)\.com(?:\/$)?|mail\.com(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > example.:ext - /^(?:example\.([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > this is - /^(?:this is(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > $:foo{$:bar} - /^(?:\$(?=([^\/]+?)\$)(?:\1)\$([^\/]+)(?:\/$)?|\$([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > name{/:attr1}{-:attr2}{-:attr3} - /^(?:name\/(?=([^\/]+?)-)(?:\1)-(?=([^\/]+?)-)(?:\2)-([^\/]+)(?:\/$)?|name\/(?=([^\/]+?)-)(?:\4)-([^\/]+)(?:\/$)?|name\/(?=([^\/]+?)-)(?:\6)-([^\/]+)(?:\/$)?|name\/([^\/]+)(?:\/$)?|name-(?=([^\/]+?)-)(?:\9)-([^\/]+)(?:\/$)?|name-([^\/]+)(?:\/$)?|name-([^\/]+)(?:\/$)?|name(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /user{s}/:user - /^(?:\/users\/([^\/]+)(?:\/$)?|\/user\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > *path - /^(?:([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*path.:ext - /^(?:\/([^]+)\.([^\/\.]+?|[^\/\.]*\.)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:path.*ext - /^(?:\/(?=([^\/]+?)\.)(?:\1)\.([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*path{.:ext} - /^(?:\/([^]+)\.([^\/\.]+?|[^\/\.]*\.)(?:\/$)?|\/([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /entity/:id/*path - /^(?:\/entity\/([^\/]+)\/([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo/:bar/*baz - /^(?:\/(?=([^]+?)\/([^\/]+)\/)(?:\1)\/(?:\2)\/([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a/:b.:c - /^(?:\/([^]+)\/(?=([^\/]+?)\.)(?:\2)\.([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a/:b.:c/*d - /^(?:\/(?=([^]+?)\/(?=([^\/]+?)\.)(?:\2)\.([^\/]+)\/)(?:\1)\/(?:\2)\.(?:\3)\/([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a/_/:b.:c/*d - /^(?:\/(?=([^]+?)\/_\/(?=([^\/]+?)\.)(?:\2)\.([^\/]+)\/)(?:\1)\/_\/(?:\2)\.(?:\3)\/([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a/:b.:c/*d/ - /^(?:\/(?=([^]+?)\/(?=([^\/]+?)\.)(?:\2)\.([^\/]+)\/)(?:\1)\/(?:\2)\.(?:\3)\/([^]+)\/)$/i [line 13] (covered 0)
+    ✘ redos > {*path} - /^(?:([^]+)(?:\/$)?|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*path/ - /^(?:\/([^]+)\/)$/i [line 13] (covered 0)
+    ✘ redos > /:foo{/test/:bar} - /^(?:\/([^\/]+)\/test\/([^\/]+)(?:\/$)?|\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > {:foo/}{:bar.} - /^(?:([^\/]+)\/([^\/]+)\.(?:\/$)?|([^\/]+)\/|([^\/]+)\.(?:\/$)?|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /abc{abc:foo} - /^(?:\/abcabc([^\/]+)(?:\/$)?|\/abc(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo{abc:bar} - /^(?:\/(?=([^\/]+?)abc)(?:\1)abc([^\/]+)(?:\/$)?|\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo\abc:bar - /^(?:\/(?=([^\/]+?)abc)(?:\1)abc([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /route|:param| - /^(?:\/route\|([^\/]+)\|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo|:bar| - /^(?:\/(?=([^\/]+?)\|)(?:\1)\|([^\/]+)\|(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo{|:bar|} - /^(?:\/(?=([^\/]+?)\|)(?:\1)\|([^\/]+)\|(?:\/$)?|\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > :foo\@:bar - /^(?:(?=([^\/]+?)@)(?:\1)@([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo-:bar - /^(?:\/([^]+)-([^\/-]+?|[^\/-]*-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo-*bar-:baz - /^(?:\/(?=([^]+?)-)(?:\1)-([^]+)-([^\/-]+?|[^\/-]*-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo-:bar-*baz - /^(?:\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)-)(?:\1)-(?:\2)-([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo-:bar-*baz-:qux - /^(?:\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)-)(?:\1)-(?:\2)-([^]+)-([^\/-]+?|[^\/-]*-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo-*bar - /^(?:\/(?=([^]+?)-)(?:\1)-([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo-:bar-*baz - /^(?:\/(?=([^\/]+?)-)(?:\1)-(?=([^\/]+?)-)(?:\2)-([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:foo-:bar-*baz-:qux - /^(?:\/(?=([^\/]+?)-)(?:\1)-(?=([^\/]+?)-)(?:\2)-([^]+)-([^\/-]+?|[^\/-]*-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo/:bar/*baz/:qux - /^(?:\/(?=([^]+?)\/([^\/]+)\/)(?:\1)\/(?:\2)\/([^]+)\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*foo/abc-:bar/xyz-*baz/:qux - /^(?:\/(?=([^]+?)\/abc-([^\/]+)\/xyz-)(?:\1)\/abc-(?:\2)\/xyz-([^]+)\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a@:b-*c - /^(?:\/(?=([^]+?)@([^\/@]+?|[^\/@]*@)-)(?:\1)@(?:\2)-([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a-*b.:c@*d - /^(?:\/(?=([^\/]+?)-)(?:\1)-(?=([^]+?)\.([^\/\.]+?|[^\/\.]*\.)@)(?:\2)\.(?:\3)@([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a-.-*b - /^(?:\/(?=([^\/]+?)-\.-)(?:\1)-\.-([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a-:b - /^(?:\/([^]+)-([^\/-]+?|[^\/-]*-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a--*b - /^(?:\/(?=([^\/]+?)--)(?:\1)--([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a%25*b - /^(?:\/(?=([^\/]+?)%25)(?:\1)%25([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a{%25*b} - /^(?:\/(?=([^\/]+?)%25)(?:\1)%25([^]+)(?:\/$)?|\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a-:b/end - /^(?:\/(?=([^\/]+?)-)(?:\1)-([^\/]+)\/end(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a.:b/end - /^(?:\/([^]+)\.([^\/\.]+?|[^\/\.]*\.)\/end(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a%25:b/end - /^(?:\/(?=([^\/]+?)%25)(?:\1)%25([^\/]+)\/end(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a--:b--:c - /^(?:\/(?=([^\/]+?)--)(?:\1)--(?=([^\/]+?)--)(?:\2)--([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a-:p.*b.:q - /^(?:\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)\.)(?:\1)-(?:\2)\.([^]+)\.([^\/\.]+?|[^\/\.]*\.)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a-:p.*b.:q/end - /^(?:\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)\.)(?:\1)-(?:\2)\.([^]+)\.([^\/\.]+?|[^\/\.]*\.)\/end(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a/:b~:c.*d - /^(?:\/(?=([^]+?)\/(?=([^\/]+?)~)(?:\2)~(?=([^\/]+?)\.)(?:\3)\.)(?:\1)\/(?:\2)~(?:\3)\.([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a-:p{.*b.:q} - /^(?:\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)\.)(?:\1)-(?:\2)\.([^]+)\.([^\/\.]+?|[^\/\.]*\.)(?:\/$)?|\/([^]+)-([^\/-]+?|[^\/-]*-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a.:p--*b - /^(?:\/(?=([^]+?)\.([^\/\.]+?|[^\/\.]*\.)--)(?:\1)\.(?:\2)--([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a--*b@@:c - /^(?:\/(?=([^]+?)--)(?:\1)--([^]+)@@((?:(?!@@)[^\/])+?|(?:(?!@@)[^\/])*@@)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a~~:b~~*c/:d - /^(?:\/(?=([^]+?)~~((?:(?!~~)[^\/])+?|(?:(?!~~)[^\/])*~~)~~)(?:\1)~~(?:\2)~~([^]+)\/([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a--*b-.-:c - /^(?:\/(?=([^]+?)--)(?:\1)--([^]+)-\.-((?:(?!-\.-)[^\/])+?|(?:(?!-\.-)[^\/])*-\.-)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a~~*b._.:c - /^(?:\/(?=([^]+?)~~)(?:\1)~~([^]+)\._\.((?:(?!\._\.)[^\/])+?|(?:(?!\._\.)[^\/])*\._\.)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a@@*b~.~:c - /^(?:\/(?=([^]+?)@@)(?:\1)@@([^]+)~\.~((?:(?!~\.~)[^\/])+?|(?:(?!~\.~)[^\/])*~\.~)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a-.-*b@@:c - /^(?:\/(?=([^]+?)-\.-)(?:\1)-\.-([^]+)@@((?:(?!@@)[^\/])+?|(?:(?!@@)[^\/])*@@)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a@.@*b--:c - /^(?:\/(?=([^]+?)@\.@)(?:\1)@\.@([^]+)--((?:(?!--)[^\/])+?|(?:(?!--)[^\/])*--)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /*a-@-*b..:c - /^(?:\/(?=([^]+?)-@-)(?:\1)-@-([^]+)\.\.((?:(?!\.\.)[^\/])+?|(?:(?!\.\.)[^\/])*\.\.)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /x/*a/*b/y - /^(?:\/x\/(?=([^]+?)\/)(?:\1)\/([^]+)\/y(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /x/*a-:b/*c/y - /^(?:\/x\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)\/)(?:\1)-(?:\2)\/([^]+)\/y(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /x/*a-:b-:c/*d/y - /^(?:\/x\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)-([^\/-]+?|[^\/-]*-)\/)(?:\1)-(?:\2)-(?:\3)\/([^]+)\/y(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /x/*a-:b-:c-*d/*e/y - /^(?:\/x\/(?=([^]+?)-([^\/-]+?|[^\/-]*-)-([^\/-]+?|[^\/-]*-)-)(?:\1)-(?:\2)-(?:\3)-(?=([^]+?)\/)(?:\4)\/([^]+)\/y(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /x/*a@/*c/y - /^(?:\/x\/(?=([^]+?)@\/)(?:\1)@\/([^]+)\/y(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > /:a-:b^*c@*d%:e - /^(?:\/(?=([^\/]+?)-)(?:\1)-(?=([^\/]+?)\^)(?:\2)\^(?=([^]+?)@)(?:\3)@([^]+)%([^\/%]+?|[^\/%]*%)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > 1*a\1*b - /^(?:1(?=([^]+?)1)(?:\1)1([^]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > %25:foo{%25:bar} - /^(?:%25(?=([^\/]+?)%25)(?:\1)%25([^\/]+)(?:\/$)?|%25([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+    ✘ redos > %25:foo..:bar - /^(?:%25(?=([^\/]+?)\.\.)(?:\1)\.\.([^\/]+)(?:\/$)?)$/i [line 13] (covered 0)
+
+[NoCoverage] CallExpression
+src/index.ts:599:5
+-       throw new TypeError(`Unknown token type: ${(token as any).type}`);
++       ;
+
+[NoCoverage] StringLiteral
+src/index.ts:599:25
+-       throw new TypeError(`Unknown token type: ${(token as any).type}`);
++       throw new TypeError(``);
+
+[NoCoverage] StringLiteral
+src/index.ts:615:20
+-     if (a === b) b = ""; // Cleaner regex strings, no duplication.
++     if (a === b) b = "Stryker was here!"; // Cleaner regex strings, no duplication.
+
+[NoCoverage] StringLiteral
+src/index.ts:616:28
+-     if (b.length > 1) return `(?:(?!${escape(a)}|${escape(b)})[^])`;
++     if (b.length > 1) return ``;
+
+[Survived] EqualityOperator
+src/index.ts:190:18
+-             while (index < chars.length) {
++             while (index <= chars.length) {
+Tests ran:
+    path-to-regexp > parse errors > should throw on unterminated quote
+    path-to-regexp > parse errors > should throw on eol backslash in quoted param
+    path-to-regexp > parse /:"0" with undefined > should parse the path
+  and 10 more tests!
+
+
+[Survived] StringLiteral
+src/index.ts:270:63
+-         throw new TypeError(`Missing parameters: ${missing.join(", ")}`);
++         throw new TypeError(`Missing parameters: ${missing.join("")}`);
+Tests ran:
+    path-to-regexp > compile errors > should throw when a param is missing
+    path-to-regexp > compile /:"0" with undefined > should compile undefined
+    path-to-regexp > compile /:"0" with undefined > should compile {}
+  and 8 more tests!
+
+
+[Survived] ConditionalExpression
+src/index.ts:333:11
+-         if (value == null) {
++         if (false) {
+Tests ran:
+    path-to-regexp > compile errors > should throw when expecting a repeated value
+    path-to-regexp > compile errors > should throw when a wildcard is not an array
+    path-to-regexp > compile errors > should throw when a wildcard array value is not a string
+  and 11 more tests!
+
+
+[Survived] BlockStatement
+src/index.ts:333:26
+-         if (value == null) {
+-           missing.push(token.name);
+-           return "";
+-         }
++         if (value == null) {}
+Tests ran:
+    path-to-regexp > compile /*test with undefined > should compile undefined
+    path-to-regexp > compile /*test with undefined > should compile {}
+
+
+[Survived] StringLiteral
+src/index.ts:335:16
+-           return "";
++           return "Stryker was here!";
+Tests ran:
+    path-to-regexp > compile /*test with undefined > should compile undefined
+    path-to-regexp > compile /*test with undefined > should compile {}
+
+
+[Survived] ConditionalExpression
+src/index.ts:338:36
+-         if (!Array.isArray(value) || value.length === 0) {
++         if (!Array.isArray(value) || false) {
+Tests ran:
+    path-to-regexp > compile errors > should throw when expecting a repeated value
+    path-to-regexp > compile errors > should throw when a wildcard array value is not a string
+    path-to-regexp > compile errors > should throw when a wildcard array yields an empty path
+  and 8 more tests!
+
+
+[Survived] StringLiteral
+src/index.ts:365:14
+-         return "";
++         return "Stryker was here!";
+Tests ran:
+    path-to-regexp > compile errors > should throw when a param is missing
+    path-to-regexp > compile /:"0" with undefined > should compile undefined
+    path-to-regexp > compile /:"0" with undefined > should compile {}
+  and 9 more tests!
+
+
+[Survived] ConditionalExpression
+src/index.ts:368:9
+-       if (typeof value !== "string" || value.length === 0) {
++       if (false || value.length === 0) {
+Tests ran:
+    path-to-regexp > compile errors > should throw when param gets an array
+    path-to-regexp > stringify param followed by empty text > should preserve the name before "bar"
+    path-to-regexp > stringify param followed by empty text > should preserve the name before "𝛼"
+  and 15 more tests!
+
+
+[Survived] EqualityOperator
+src/index.ts:423:21
+-       for (let i = 1; i < m.length; i++) {
++       for (let i = 1; i <= m.length; i++) {
+Tests ran:
+    path-to-regexp > match / with undefined > should match /
+    path-to-regexp > match /test with undefined > should match /test
+    path-to-regexp > match /test with undefined > should match /test/
+  and 256 more tests!
+
+
+[Survived] StringLiteral
+src/index.ts:666:37
+-     return `"${name.replace(/["\\]/g, "\\$&")}"`;
++     return `"${name.replace(/["\\]/g, "")}"`;
+Tests ran:
+    path-to-regexp > stringify undefined with undefined > should stringify the path
+    path-to-regexp > stringify param followed by empty text > should preserve the name before "bar"
+    path-to-regexp > stringify param followed by empty text > should preserve the name before "𝛼"
+  and 2 more tests!
+
+
+[Survived] ConditionalExpression
+src/index.ts:681:9
+-       if (token.type === "text") {
++       if (true) {
+Tests ran:
+    path-to-regexp > stringify undefined with undefined > should stringify the path
+    path-to-regexp > stringify param followed by empty text > should preserve the name before "bar"
+    path-to-regexp > stringify param followed by empty text > should preserve the name before "𝛼"
+  and 6 more tests!
+
+
+[Survived] EqualityOperator
+src/index.ts:460:11
+-         if (combinations >= 256) {
++         if (combinations > 256) {
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/index.ts:522:16
+-     let prefix = "";
++     let prefix = "Stryker was here!";
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/index.ts:525:27
+-     let wildcardBacktrack = "";
++     let wildcardBacktrack = "Stryker was here!";
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/index.ts:541:11
+-         if (token.value.includes(delimiter)) break;
++         if (false) break;
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/index.ts:558:9
+-       if (token.type === "param" || token.type === "wildcard") {
++       if (true) {
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/index.ts:576:48
+-               result += `(?=(${negate(delimiter, "")}+?)${escape(text)})(?:\\${keys.length})`;
++               result += `(?=(${negate(delimiter, "Stryker was here!")}+?)${escape(text)})(?:\\${keys.length})`;
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/index.ts:613:7
+-     if (b.length > a.length) return negate(b, a); // Longest string first.
++     if (false) return negate(b, a); // Longest string first.
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/index.ts:615:7
+-     if (a === b) b = ""; // Cleaner regex strings, no duplication.
++     if (false) b = ""; // Cleaner regex strings, no duplication.
+Ran all tests for this mutant.
+
+[Survived] StringLiteral
+src/index.ts:578:45
+-               result += `(${negate(delimiter, "")}+)`;
++               result += `(${negate(delimiter, "Stryker was here!")}+)`;
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/index.ts:616:7
+-     if (b.length > 1) return `(?:(?!${escape(a)}|${escape(b)})[^])`;
++     if (false) return `(?:(?!${escape(a)}|${escape(b)})[^])`;
+Ran all tests for this mutant.
+
+[Survived] EqualityOperator
+src/index.ts:616:7
+-     if (b.length > 1) return `(?:(?!${escape(a)}|${escape(b)})[^])`;
++     if (b.length >= 1) return `(?:(?!${escape(a)}|${escape(b)})[^])`;
+Ran all tests for this mutant.
+
+[Survived] ConditionalExpression
+src/index.ts:617:7
+-     if (a.length > 1) return `(?:(?!${escape(a)})[^${escape(b)}])`;
++     if (true) return `(?:(?!${escape(a)})[^${escape(b)}])`;
+Ran all tests for this mutant.
+
+[Survived] EqualityOperator
+src/index.ts:617:7
+-     if (a.length > 1) return `(?:(?!${escape(a)})[^${escape(b)}])`;
++     if (a.length >= 1) return `(?:(?!${escape(a)})[^${escape(b)}])`;
+Ran all tests for this mutant.
+
+Ran 59.83 tests per mutant on average.
+----------|------------------|----------|-----------|------------|----------|----------|
+          | % Mutation score |          |           |            |          |          |
+File      |  total | covered | # killed | # timeout | # survived | # no cov | # errors |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+All files |  94.52 |   95.27 |      466 |        17 |         24 |        4 |        0 |
+ index.ts |  94.52 |   95.27 |      466 |        17 |         24 |        4 |        0 |
+----------|--------|---------|----------|-----------|------------|----------|----------|
+[32m19:33:19 (6903) INFO JsonReporter[39m Your report can be found at: file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/reports/mutation/mutation.json
+[32m19:33:19 (6903) INFO HtmlReporter[39m Your report can be found at: file:///Users/lizaefremenko/Desktop/IT%20STEP/AI/path-to-regexp/reports/mutation/mutation.html
+[32m19:33:19 (6903) INFO MutationTestExecutor[39m Done in 1 minute and 34 seconds.
