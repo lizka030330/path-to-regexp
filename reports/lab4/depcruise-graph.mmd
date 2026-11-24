@@ -1,0 +1,156 @@
+flowchart LR
+
+subgraph 0["src"]
+1["cases.spec.ts"]
+2["index.bench.ts"]
+3["index.ts"]
+12["index.spec.ts"]
+13["redos.spec.ts"]
+end
+subgraph 4["node_modules"]
+subgraph 5["vitest"]
+subgraph 6["dist"]
+7["index.js"]
+subgraph A["chunks"]
+B["display.BlTmubjj.js"]
+C["index.D0heQG4v.js"]
+D["tinyrainbow.Do8I1XRG.js"]
+E["index.aTZaPVhf.js"]
+H["pathe.M-eThtNZ.Ba-7h1rE.js"]
+I["offset.Dy-5Fdfn.js"]
+J["plugins.DPQHVT0p.js"]
+K["rpc.DpkUyY1N.js"]
+L["index.DmDMHCg8.js"]
+M["source-map.DdKI5IHB.js"]
+N["utils.DYj33du9.js"]
+O["run.BPv-BBRv.js"]
+P["spy.DDMXghXv.js"]
+end
+G["task-utils.js"]
+end
+end
+subgraph Q["chai"]
+R["index.js"]
+end
+subgraph S["expect-type"]
+subgraph T["dist"]
+U["index.js"]
+V["branding.js"]
+W["messages.js"]
+X["overloads.js"]
+Y["utils.js"]
+end
+end
+subgraph Z["tinybench"]
+subgraph 10["dist"]
+11["index.js"]
+end
+end
+subgraph 14["recheck"]
+15["index.js"]
+subgraph 16["lib"]
+17["main.js"]
+end
+end
+subgraph 1A["synckit"]
+subgraph 1B["lib"]
+1C["index.cjs"]
+end
+end
+subgraph 1I["@pkgr"]
+subgraph 1J["core"]
+subgraph 1K["lib"]
+1L["index.cjs"]
+end
+end
+end
+end
+subgraph 8["vite"]
+9["module-runner"]
+end
+F["magic-string"]
+18["child_process"]
+19["worker_threads"]
+1D["crypto"]
+1E["fs"]
+1F["module"]
+1G["path"]
+1H["url"]
+2-->3
+2-->7
+7-->B
+7-->E
+7-->C
+7-->L
+7-->I
+7-->H
+7-->J
+7-->K
+7-->O
+7-->M
+7-->P
+7-->D
+7-->N
+7-->G
+7-->R
+7-->U
+7-->11
+7-->9
+B-->C
+C-->D
+E-->G
+E-->B
+E-->C
+E-->I
+E-->H
+E-->J
+E-->K
+E-->O
+E-->M
+E-->P
+E-->D
+E-->N
+E-->R
+E-->U
+E-->F
+E-->11
+G-->H
+J-->C
+K-->L
+K-->H
+K-->M
+K-->N
+K-->9
+M-->C
+M-->H
+O-->G
+O-->B
+O-->C
+O-->H
+O-->M
+O-->D
+U-->V
+U-->W
+U-->X
+U-->Y
+12-->1
+12-->3
+12-->7
+13-->1
+13-->3
+13-->15
+13-->7
+15-->17
+17-->18
+17-->1C
+17-->19
+1C-->1L
+1C-->1D
+1C-->1E
+1C-->1F
+1C-->1G
+1C-->1H
+1C-->19
+1L-->1E
+1L-->1F
+1L-->1G

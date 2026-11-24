@@ -1,0 +1,38 @@
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [339:19 - 344:46] (6 lines, 50 tokens)
+   cases.spec.ts [349:31 - 354:46]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [457:19 - 483:18] (27 lines, 105 tokens)
+   cases.spec.ts [709:6 - 735:18]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [587:7 - 597:9] (11 lines, 53 tokens)
+   cases.spec.ts [1501:7 - 1511:9]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [628:6 - 638:38] (11 lines, 54 tokens)
+   cases.spec.ts [852:25 - 864:18]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [873:33 - 886:10] (14 lines, 62 tokens)
+   cases.spec.ts [890:34 - 907:10]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [1336:7 - 1353:10] (18 lines, 55 tokens)
+   cases.spec.ts [1362:7 - 1379:10]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [1517:7 - 1524:9] (8 lines, 54 tokens)
+   cases.spec.ts [1772:7 - 1779:9]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [1766:20 - 1790:10] (25 lines, 115 tokens)
+   cases.spec.ts [1791:28 - 1815:10]
+[1mClone found (typescript)[22m
+ - [1m[32mcases.spec.ts[39m[22m [2467:25 - 2479:10] (13 lines, 51 tokens)
+   cases.spec.ts [2503:27 - 2515:10]
+[90m┌────────────┬────────────────┬─────────────┬──────────────┬──────────────┬──────────────────┬───────────────────┐[39m
+[90m│[39m[31m Format     [39m[90m│[39m[31m Files analyzed [39m[90m│[39m[31m Total lines [39m[90m│[39m[31m Total tokens [39m[90m│[39m[31m Clones found [39m[90m│[39m[31m Duplicated lines [39m[90m│[39m[31m Duplicated tokens [39m[90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m typescript [90m│[39m 5              [90m│[39m 3967        [90m│[39m 16861        [90m│[39m 9            [90m│[39m 133 (3.35%)      [90m│[39m 599 (3.55%)       [90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m [1mTotal:[22m     [90m│[39m 5              [90m│[39m 3967        [90m│[39m 16861        [90m│[39m 9            [90m│[39m 133 (3.35%)      [90m│[39m 599 (3.55%)       [90m│[39m
+[90m└────────────┴────────────────┴─────────────┴──────────────┴──────────────┴──────────────────┴───────────────────┘[39m
+[90mFound 9 clones.[39m
+[32mMarkdown report saved to /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/reports/lab4/jscpd/jscpd-report.md[39m
+[32mJSON report saved to /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/reports/lab4/jscpd/jscpd-report.json[39m
+[90mtime: 7.637ms[39m

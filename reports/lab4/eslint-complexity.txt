@@ -1,0 +1,33 @@
+
+/Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/src/index.ts
+  129:3   warning  Constructor has a complexity of 2. Maximum allowed is 1                    complexity
+  144:8   warning  Function 'parse' has too many lines (108). Maximum allowed is 50           max-lines-per-function
+  144:8   warning  Function 'parse' has a complexity of 3. Maximum allowed is 1               complexity
+  149:3   warning  Function 'consumeUntil' has too many lines (97). Maximum allowed is 50     max-lines-per-function
+  149:3   warning  Function 'consumeUntil' has a complexity of 19. Maximum allowed is 1       complexity
+  153:5   warning  Function 'writePath' has a complexity of 2. Maximum allowed is 1           complexity
+  256:8   warning  Function 'compile' has a complexity of 5. Maximum allowed is 1             complexity
+  265:10  warning  Function 'path' has a complexity of 3. Maximum allowed is 1                complexity
+  294:47  warning  Arrow function has a complexity of 2. Maximum allowed is 1                 complexity
+  308:1   warning  Function 'tokenToFunction' has too many lines (67). Maximum allowed is 50  max-lines-per-function
+  308:1   warning  Function 'tokenToFunction' has a complexity of 6. Maximum allowed is 1     complexity
+  318:28  warning  Arrow function has a complexity of 2. Maximum allowed is 1                 complexity
+  331:28  warning  Arrow function has a complexity of 8. Maximum allowed is 1                 complexity
+  361:26  warning  Arrow function has a complexity of 4. Maximum allowed is 1                 complexity
+  402:8   warning  Function 'match' has a complexity of 4. Maximum allowed is 1               complexity
+  410:35  warning  Arrow function has a complexity of 3. Maximum allowed is 1                 complexity
+  416:10  warning  Function 'match' has a complexity of 4. Maximum allowed is 1               complexity
+  438:8   warning  Function 'pathToRegexp' has a complexity of 8. Maximum allowed is 1        complexity
+  452:3   warning  Function 'process' has a complexity of 4. Maximum allowed is 1             complexity
+  459:42  warning  Arrow function has a complexity of 3. Maximum allowed is 1                 complexity
+  487:1   warning  Function 'flatten' has a complexity of 3. Maximum allowed is 1             complexity
+  514:1   warning  Function 'toRegExpSource' has too many lines (94). Maximum allowed is 50   max-lines-per-function
+  514:1   warning  Function 'toRegExpSource' has a complexity of 15. Maximum allowed is 1     complexity
+  528:3   warning  Function 'seekWildcard' has a complexity of 3. Maximum allowed is 1        complexity
+  536:3   warning  Function 'textRemaining' has a complexity of 4. Maximum allowed is 1       complexity
+  612:1   warning  Function 'negate' has a complexity of 5. Maximum allowed is 1              complexity
+  624:8   warning  Function 'stringify' has a complexity of 6. Maximum allowed is 1           complexity
+  672:1   warning  Function 'stringifyName' has a complexity of 6. Maximum allowed is 1       complexity
+
+✖ 28 problems (0 errors, 28 warnings)
+

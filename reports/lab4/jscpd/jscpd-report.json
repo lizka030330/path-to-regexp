@@ -1,0 +1,375 @@
+{
+  "duplicates": [
+    {
+      "firstFile": {
+        "end": 344,
+        "endLoc": {
+          "column": 45,
+          "line": 344,
+          "position": 7030
+        },
+        "name": "cases.spec.ts",
+        "start": 339,
+        "startLoc": {
+          "column": 18,
+          "line": 339,
+          "position": 6837
+        }
+      },
+      "format": "typescript",
+      "fragment": "    path: \"/:test\",\n    tests: [\n      { input: undefined, expected: null },\n      { input: {}, expected: null },\n      { input: { test: \"123\" }, expected: \"/123\" },\n      { input: { test: \"123/xyz\" }, expected: \"/123%2Fxyz\" },",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 6,
+      "secondFile": {
+        "end": 354,
+        "endLoc": {
+          "column": 45,
+          "line": 354,
+          "position": 7306
+        },
+        "name": "cases.spec.ts",
+        "start": 349,
+        "startLoc": {
+          "column": 30,
+          "line": 349,
+          "position": 7113
+        }
+      },
+      "tokens": 50
+    },
+    {
+      "firstFile": {
+        "end": 483,
+        "endLoc": {
+          "column": 17,
+          "line": 483,
+          "position": 10289
+        },
+        "name": "cases.spec.ts",
+        "start": 457,
+        "startLoc": {
+          "column": 18,
+          "line": 457,
+          "position": 9699
+        }
+      },
+      "format": "typescript",
+      "fragment": "    path: \"/:test\",\n    tests: [\n      {\n        input: \"/route\",\n        expected: { path: \"/route\", params: { test: \"route\" } },\n      },\n      {\n        input: \"/route/\",\n        expected: { path: \"/route/\", params: { test: \"route\" } },\n      },\n      {\n        input: \"/route.json\",\n        expected: {\n          path: \"/route.json\",\n          params: { test: \"route.json\" },\n        },\n      },\n      {\n        input: \"/route.json/\",\n        expected: {\n          path: \"/route.json/\",\n          params: { test: \"route.json\" },\n        },\n      },\n      {\n        input: \"/route/test\",\n        expected: false,",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 27,
+      "secondFile": {
+        "end": 735,
+        "endLoc": {
+          "column": 17,
+          "line": 735,
+          "position": 14968
+        },
+        "name": "cases.spec.ts",
+        "start": 709,
+        "startLoc": {
+          "column": 5,
+          "line": 709,
+          "position": 14378
+        }
+      },
+      "tokens": 105
+    },
+    {
+      "firstFile": {
+        "end": 597,
+        "endLoc": {
+          "column": 8,
+          "line": 597,
+          "position": 12371
+        },
+        "name": "cases.spec.ts",
+        "start": 587,
+        "startLoc": {
+          "column": 6,
+          "line": 587,
+          "position": 12107
+        }
+      },
+      "format": "typescript",
+      "fragment": "      {\n        input: \"/route\",\n        expected: { path: \"/route\", params: { path: [\"route\"] } },\n      },\n      {\n        input: \"/route/nested\",\n        expected: {\n          path: \"/route/nested\",\n          params: { path: [\"route\", \"nested\"] },\n        },\n      },",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 11,
+      "secondFile": {
+        "end": 1511,
+        "endLoc": {
+          "column": 8,
+          "line": 1511,
+          "position": 29521
+        },
+        "name": "cases.spec.ts",
+        "start": 1501,
+        "startLoc": {
+          "column": 6,
+          "line": 1501,
+          "position": 29257
+        }
+      },
+      "tokens": 53
+    },
+    {
+      "firstFile": {
+        "end": 638,
+        "endLoc": {
+          "column": 37,
+          "line": 638,
+          "position": 13171
+        },
+        "name": "cases.spec.ts",
+        "start": 628,
+        "startLoc": {
+          "column": 5,
+          "line": 628,
+          "position": 12922
+        }
+      },
+      "format": "typescript",
+      "fragment": "    },\n    tests: [\n      {\n        input: \"/bar\",\n        expected: { path: \"/bar\", params: {} },\n      },\n      {\n        input: \"/foo/bar\",\n        expected: { path: \"/foo/bar\", params: { test: \"foo\" } },\n      },\n      { input: \"/foo/bar/\", expected: false },",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 11,
+      "secondFile": {
+        "end": 864,
+        "endLoc": {
+          "column": 17,
+          "line": 864,
+          "position": 17357
+        },
+        "name": "cases.spec.ts",
+        "start": 852,
+        "startLoc": {
+          "column": 24,
+          "line": 852,
+          "position": 17092
+        }
+      },
+      "tokens": 54
+    },
+    {
+      "firstFile": {
+        "end": 886,
+        "endLoc": {
+          "column": 9,
+          "line": 886,
+          "position": 17803
+        },
+        "name": "cases.spec.ts",
+        "start": 873,
+        "startLoc": {
+          "column": 32,
+          "line": 873,
+          "position": 17533
+        }
+      },
+      "format": "typescript",
+      "fragment": "        expected: { path: \"-bar\", params: {} },\n      },\n      {\n        input: \"/foo-bar\",\n        expected: { path: \"/foo-bar\", params: { test: \"foo\" } },\n      },\n      {\n        input: \"/foo-bar/\",\n        expected: { path: \"/foo-bar/\", params: { test: \"foo\" } },\n      },\n    ],\n  },\n  {\n    path: \"/{:test}-bar\",",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 14,
+      "secondFile": {
+        "end": 907,
+        "endLoc": {
+          "column": 9,
+          "line": 907,
+          "position": 18208
+        },
+        "name": "cases.spec.ts",
+        "start": 890,
+        "startLoc": {
+          "column": 33,
+          "line": 890,
+          "position": 17898
+        }
+      },
+      "tokens": 62
+    },
+    {
+      "firstFile": {
+        "end": 1353,
+        "endLoc": {
+          "column": 9,
+          "line": 1353,
+          "position": 26445
+        },
+        "name": "cases.spec.ts",
+        "start": 1336,
+        "startLoc": {
+          "column": 6,
+          "line": 1336,
+          "position": 26109
+        }
+      },
+      "format": "typescript",
+      "fragment": "      {\n        input: \"mail.example.com\",\n        expected: {\n          path: \"mail.example.com\",\n          params: { domain: \"example\" },\n        },\n      },\n      {\n        input: \"mail.github.com\",\n        expected: {\n          path: \"mail.github.com\",\n          params: { domain: \"github\" },\n        },\n      },\n    ],\n  },\n  {\n    path: \"mail{.:domain}.com\",",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 18,
+      "secondFile": {
+        "end": 1379,
+        "endLoc": {
+          "column": 9,
+          "line": 1379,
+          "position": 26982
+        },
+        "name": "cases.spec.ts",
+        "start": 1362,
+        "startLoc": {
+          "column": 6,
+          "line": 1362,
+          "position": 26646
+        }
+      },
+      "tokens": 55
+    },
+    {
+      "firstFile": {
+        "end": 1524,
+        "endLoc": {
+          "column": 8,
+          "line": 1524,
+          "position": 29777
+        },
+        "name": "cases.spec.ts",
+        "start": 1517,
+        "startLoc": {
+          "column": 6,
+          "line": 1517,
+          "position": 29576
+        }
+      },
+      "format": "typescript",
+      "fragment": "      {\n        input: \"/\",\n        expected: { path: \"/\", params: { path: [\"\", \"\"] } },\n      },\n      {\n        input: \"/test\",\n        expected: { path: \"/test\", params: { path: [\"\", \"test\"] } },\n      },",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 8,
+      "secondFile": {
+        "end": 1779,
+        "endLoc": {
+          "column": 8,
+          "line": 1779,
+          "position": 35369
+        },
+        "name": "cases.spec.ts",
+        "start": 1772,
+        "startLoc": {
+          "column": 6,
+          "line": 1772,
+          "position": 35168
+        }
+      },
+      "tokens": 54
+    },
+    {
+      "firstFile": {
+        "end": 1790,
+        "endLoc": {
+          "column": 9,
+          "line": 1790,
+          "position": 35558
+        },
+        "name": "cases.spec.ts",
+        "start": 1766,
+        "startLoc": {
+          "column": 19,
+          "line": 1766,
+          "position": 35067
+        }
+      },
+      "format": "typescript",
+      "fragment": "    path: \"{*path}\",\n    tests: [\n      {\n        input: \"\",\n        expected: { path: \"\", params: {} },\n      },\n      {\n        input: \"/\",\n        expected: { path: \"/\", params: { path: [\"\", \"\"] } },\n      },\n      {\n        input: \"/test\",\n        expected: { path: \"/test\", params: { path: [\"\", \"test\"] } },\n      },\n      {\n        input: \"/test/nested\",\n        expected: {\n          path: \"/test/nested\",\n          params: { path: [\"\", \"test\", \"nested\"] },\n        },\n      },\n    ],\n  },\n  {\n    path: \"{*path}\",",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 25,
+      "secondFile": {
+        "end": 1815,
+        "endLoc": {
+          "column": 9,
+          "line": 1815,
+          "position": 36088
+        },
+        "name": "cases.spec.ts",
+        "start": 1791,
+        "startLoc": {
+          "column": 27,
+          "line": 1791,
+          "position": 35597
+        }
+      },
+      "tokens": 115
+    },
+    {
+      "firstFile": {
+        "end": 2479,
+        "endLoc": {
+          "column": 9,
+          "line": 2479,
+          "position": 49038
+        },
+        "name": "cases.spec.ts",
+        "start": 2467,
+        "startLoc": {
+          "column": 24,
+          "line": 2467,
+          "position": 48837
+        }
+      },
+      "format": "typescript",
+      "fragment": "    path: \"/*a-:p.*b.:q\",\n    tests: [\n      {\n        input: \"/a-b.c.d\",\n        expected: {\n          path: \"/a-b.c.d\",\n          params: { a: [\"a\"], p: \"b\", b: [\"c\"], q: \"d\" },\n        },\n      },\n    ],\n  },\n  {\n    path: \"/*a-:p.*b.:q/end\",",
+      "isNew": false,
+      "kind": "exact",
+      "lines": 13,
+      "secondFile": {
+        "end": 2515,
+        "endLoc": {
+          "column": 9,
+          "line": 2515,
+          "position": 49700
+        },
+        "name": "cases.spec.ts",
+        "start": 2503,
+        "startLoc": {
+          "column": 26,
+          "line": 2503,
+          "position": 49499
+        }
+      },
+      "tokens": 51
+    }
+  ],
+  "statistics": {
+    "detectionDate": "2026-11-24T16:54:50.350Z",
+    "formats": {
+      "typescript": {
+        "clones": 9,
+        "duplicatedLines": 133,
+        "duplicatedTokens": 599,
+        "lines": 3967,
+        "newClones": 0,
+        "newDuplicatedLines": 0,
+        "percentage": 3.3526594403831615,
+        "percentageTokens": 3.5525769527311546,
+        "sources": 5,
+        "tokens": 16861
+      }
+    },
+    "total": {
+      "clones": 9,
+      "duplicatedLines": 133,
+      "duplicatedTokens": 599,
+      "lines": 3967,
+      "newClones": 0,
+      "newDuplicatedLines": 0,
+      "percentage": 3.3526594403831615,
+      "percentageTokens": 3.5525769527311546,
+      "sources": 5,
+      "tokens": 16861
+    }
+  }
+}

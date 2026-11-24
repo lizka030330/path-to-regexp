@@ -1,0 +1,74 @@
+# protocol · 2026-11-24 18:54:22 · Darwin arm64
+$ git rev-parse HEAD → c439054f178ae93a09e30f902c3976ee5a2434a5
+$ node --version → v24.21.0
+$ npm --version → 11.19.0
+$ engines → "не оголошено"
+$ npm ci → exit=0 · 3s · рядків WARN: 0 · peer: 0
+$ npm test → exit=0 · 5s
+ Test Files  3 passed (3)
+      Tests  547 passed (547)
+$ npm run build → exit=0 · 0s
+$ npm run lint → exit=1 · 0s
+$ git status --porcelain (без reports/) → 0 змін
+
+# dependency-cruiser 18.7.0
+$ npx -y dependency-cruiser@18.7.0 --no-config --output-type text src → exit див. нижче
+exit=0
+cycles/err exit=0
+
+# madge 8.0.0
+$ npx -y madge@8.0.0 --extensions ts --circular src → exit=0
+
+# jscpd 5.4.2
+$ npx -y jscpd@5.4.2 src --reporters console,markdown,json --output reports/lab4/jscpd → exit=0
+   cases.spec.ts [2503:27 - 2515:10]
+[90m┌────────────┬────────────────┬─────────────┬──────────────┬──────────────┬──────────────────┬───────────────────┐[39m
+[90m│[39m[31m Format     [39m[90m│[39m[31m Files analyzed [39m[90m│[39m[31m Total lines [39m[90m│[39m[31m Total tokens [39m[90m│[39m[31m Clones found [39m[90m│[39m[31m Duplicated lines [39m[90m│[39m[31m Duplicated tokens [39m[90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m typescript [90m│[39m 5              [90m│[39m 3967        [90m│[39m 16861        [90m│[39m 9            [90m│[39m 133 (3.35%)      [90m│[39m 599 (3.55%)       [90m│[39m
+[90m├────────────┼────────────────┼─────────────┼──────────────┼──────────────┼──────────────────┼───────────────────┤[39m
+[90m│[39m [1mTotal:[22m     [90m│[39m 5              [90m│[39m 3967        [90m│[39m 16861        [90m│[39m 9            [90m│[39m 133 (3.35%)      [90m│[39m 599 (3.55%)       [90m│[39m
+[90m└────────────┴────────────────┴─────────────┴──────────────┴──────────────┴──────────────────┴───────────────────┘[39m
+[90mFound 9 clones.[39m
+[32mMarkdown report saved to /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/reports/lab4/jscpd/jscpd-report.md[39m
+[32mJSON report saved to /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/reports/lab4/jscpd/jscpd-report.json[39m
+[90mtime: 7.637ms[39m
+
+# eslint 10.13.0 · core complexity (max:1 → складність КОЖНОЇ функції; типовий поріг 20) + max-lines-per-function (окрема тека ~/lab4-tools, не чужий package.json)
+tools install exit=0
+$ eslint --config ~/lab4-tools/eslint.config.mjs src/index.ts → exit=0 (1 = є попередження/помилки)
+
+/Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/src/index.ts
+  129:3   warning  Constructor has a complexity of 2. Maximum allowed is 1                    complexity
+  144:8   warning  Function 'parse' has too many lines (108). Maximum allowed is 50           max-lines-per-function
+  144:8   warning  Function 'parse' has a complexity of 3. Maximum allowed is 1               complexity
+  149:3   warning  Function 'consumeUntil' has too many lines (97). Maximum allowed is 50     max-lines-per-function
+  149:3   warning  Function 'consumeUntil' has a complexity of 19. Maximum allowed is 1       complexity
+  153:5   warning  Function 'writePath' has a complexity of 2. Maximum allowed is 1           complexity
+  256:8   warning  Function 'compile' has a complexity of 5. Maximum allowed is 1             complexity
+  265:10  warning  Function 'path' has a complexity of 3. Maximum allowed is 1                complexity
+  294:47  warning  Arrow function has a complexity of 2. Maximum allowed is 1                 complexity
+  308:1   warning  Function 'tokenToFunction' has too many lines (67). Maximum allowed is 50  max-lines-per-function
+  308:1   warning  Function 'tokenToFunction' has a complexity of 6. Maximum allowed is 1     complexity
+  318:28  warning  Arrow function has a complexity of 2. Maximum allowed is 1                 complexity
+  331:28  warning  Arrow function has a complexity of 8. Maximum allowed is 1                 complexity
+  361:26  warning  Arrow function has a complexity of 4. Maximum allowed is 1                 complexity
+  402:8   warning  Function 'match' has a complexity of 4. Maximum allowed is 1               complexity
+  410:35  warning  Arrow function has a complexity of 3. Maximum allowed is 1                 complexity
+  416:10  warning  Function 'match' has a complexity of 4. Maximum allowed is 1               complexity
+  438:8   warning  Function 'pathToRegexp' has a complexity of 8. Maximum allowed is 1        complexity
+  452:3   warning  Function 'process' has a complexity of 4. Maximum allowed is 1             complexity
+  459:42  warning  Arrow function has a complexity of 3. Maximum allowed is 1                 complexity
+  487:1   warning  Function 'flatten' has a complexity of 3. Maximum allowed is 1             complexity
+  514:1   warning  Function 'toRegExpSource' has too many lines (94). Maximum allowed is 50   max-lines-per-function
+  514:1   warning  Function 'toRegExpSource' has a complexity of 15. Maximum allowed is 1     complexity
+  528:3   warning  Function 'seekWildcard' has a complexity of 3. Maximum allowed is 1        complexity
+  536:3   warning  Function 'textRemaining' has a complexity of 4. Maximum allowed is 1       complexity
+  612:1   warning  Function 'negate' has a complexity of 5. Maximum allowed is 1              complexity
+  624:8   warning  Function 'stringify' has a complexity of 6. Maximum allowed is 1           complexity
+  672:1   warning  Function 'stringifyName' has a complexity of 6. Maximum allowed is 1       complexity
+
+✖ 28 problems (0 errors, 28 warnings)
+
+
+ГОТОВО
