@@ -1,0 +1,49 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv5.0.5 [39m[90m/Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp-change[39m
+
+ [31m❯[39m src/decode-error.spec.ts [2m([22m[2m3 tests[22m[2m | [22m[31m2 failed[39m[2m)[22m[32m 7[2mms[22m[39m
+   [31m❯[39m match() — зрозуміла помилка декодування (крок 02) [2m(3)[22m
+[31m     [31m×[31m називає :параметр і сире значення[39m[32m 5[2mms[22m[39m
+[31m     [31m×[31m для wildcard називає параметр і саме той сегмент, що не декодувався[39m[32m 1[2mms[22m[39m
+     [32m✓[39m коректне %-кодування й далі декодується без помилки[32m 0[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m src/decode-error.spec.ts[2m > [22mmatch() — зрозуміла помилка декодування (крок 02)[2m > [22mназиває :параметр і сире значення
+[31m[1mAssertionError[22m: expected [Function] to throw error including 'Failed to decode param "test" ("caf%C…' but got 'URI malformed'[39m
+
+Expected: [32m"[7mFailed to decode param "test" ("caf%C3"): [27mURI malformed"[39m
+Received: [31m"URI malformed"[39m
+
+[36m [2m❯[22m src/decode-error.spec.ts:[2m18:33[22m[39m
+    [90m 16|[39m     const fn = match("/:test");
+    [90m 17|[39m     expect(() => fn("/caf%C3")).toThrowError(URIError);
+    [90m 18|[39m     expect(() => fn("/caf%C3")).toThrowError(
+    [90m   |[39m                                 [31m^[39m
+    [90m 19|[39m       'Failed to decode param "test" ("caf%C3"): URI malformed',
+    [90m 20|[39m     );
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+[41m[1m FAIL [22m[49m src/decode-error.spec.ts[2m > [22mmatch() — зрозуміла помилка декодування (крок 02)[2m > [22mдля wildcard називає параметр і саме той сегмент, що не декодувався
+[31m[1mAssertionError[22m: expected [Function] to throw error including 'Failed to decode param "splat" ("caf%…' but got 'URI malformed'[39m
+
+Expected: [32m"[7mFailed to decode param "splat" ("caf%C3"): [27mURI malformed"[39m
+Received: [31m"URI malformed"[39m
+
+[36m [2m❯[22m src/decode-error.spec.ts:[2m26:37[22m[39m
+    [90m 24|[39m     const fn = match("/*splat");
+    [90m 25|[39m     expect(() => fn("/bar/caf%C3")).toThrowError(URIError);
+    [90m 26|[39m     expect(() => fn("/bar/caf%C3")).toThrowError(
+    [90m   |[39m                                     [31m^[39m
+    [90m 27|[39m       'Failed to decode param "splat" ("caf%C3"): URI malformed',
+    [90m 28|[39m     );
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m1 passed[39m[22m[90m (3)[39m
+[2m   Start at [22m 20:48:24
+[2m   Duration [22m 109ms[2m (import 34%, tests 31%, transform 22%, worker 11%)[22m
+
