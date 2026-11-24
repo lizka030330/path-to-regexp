@@ -409,8 +409,20 @@ export function match<P extends ParamData>(
 
   const decoders = keys.map((key) => {
     if (decode === false) return NOOP_VALUE;
-    if (key.type === "param") return decode;
-    return (value: string) => value.split(delimiter).map(decode);
+
+    const decodeParam = (value: string) => {
+      try {
+        return decode(value);
+      } catch (err) {
+        if (!(err instanceof URIError)) throw err;
+        throw new URIError(
+          `Failed to decode param "${key.name}" ("${value}"): ${(err as Error).message}`,
+        );
+      }
+    };
+
+    if (key.type === "param") return decodeParam;
+    return (value: string) => value.split(delimiter).map(decodeParam);
   });
 
   return function match(input: string) {
