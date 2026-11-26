@@ -1,0 +1,20 @@
+diff --git a/node_modules b/node_modules
+new file mode 120000
+index 0000000..1e9d85e
+--- /dev/null
++++ b/node_modules
+@@ -0,0 +1 @@
++/Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp/node_modules
+\ No newline at end of file
+diff --git a/src/index.ts b/src/index.ts
+index 3713b0f..0b254c7 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -282,6 +282,7 @@ export type PathFunction<P extends ParamData> = (data?: P) => string;
+  */
+ type TokenEncoder = (data: ParamData, missing: string[]) => string;
+ 
++/** Returns a function that executes an array of token encoders. */
+ function tokensToFunction(
+   tokens: readonly Token[],
+   delimiter: string,
