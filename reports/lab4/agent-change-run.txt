@@ -1,0 +1,116 @@
+[0m
+> lab4-change · gemini-3.6-flash
+[0m
+[0m→ [0mRead src/index.ts
+[0m✗ [0mGrep "decode" failed
+[91m[1mError: [0mRipgrep JSON record exceeded 65536 bytes
+[0m✱ [0mGrep "decode"[90m 14 matches[0m
+[0m→ [0mRead src/decode-error.spec.ts
+[0m→ [0mRead src/characterization.spec.ts
+[0m
+[0m← [0mEdit src/index.ts
+Index: /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp-change/src/index.ts
+===================================================================
+--- /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp-change/src/index.ts
++++ /Users/lizaefremenko/Desktop/IT STEP/AI/path-to-regexp-change/src/index.ts
+@@ -408,10 +408,21 @@
+ const { regexp, keys } = pathToRegexp(path, options);
+ 
+ const decoders = keys.map((key) => {
+   if (decode === false) return NOOP_VALUE;
+-  if (key.type === "param") return decode;
+-  return (value: string) => value.split(delimiter).map(decode);
++
++  const decodeParam = (value: string) => {
++    try {
++      return decode(value);
++    } catch (err) {
++      throw new URIError(
++        `Failed to decode param "${key.name}" ("${value}"): ${(err as Error).message}`,
++      );
++    }
++  };
++
++  if (key.type === "param") return decodeParam;
++  return (value: string) => value.split(delimiter).map(decodeParam);
+ });
+ 
+ return function match(input: string) {
+   const m = regexp.exec(input);
+
+[0m
+[0m$ [0mgit diff src/index.ts
+diff --git a/src/index.ts b/src/index.ts
+index 3713b0f..be45506 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -409,8 +409,19 @@ export function match<P extends ParamData>(
+ 
+   const decoders = keys.map((key) => {
+     if (decode === false) return NOOP_VALUE;
+-    if (key.type === "param") return decode;
+-    return (value: string) => value.split(delimiter).map(decode);
++
++    const decodeParam = (value: string) => {
++      try {
++        return decode(value);
++      } catch (err) {
++        throw new URIError(
++          `Failed to decode param "${key.name}" ("${value}"): ${(err as Error).message}`,
++        );
++      }
++    };
++
++    if (key.type === "param") return decodeParam;
++    return (value: string) => value.split(delimiter).map(decodeParam);
+   });
+ 
+   return function match(input: string) {
+[0m
+[0m$ [0mgit status
+On branch lab4/change
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   src/index.ts
+
+no changes added to commit (use "git add" and/or "git commit -a")
+[0m
+```diff
+diff --git a/src/index.ts b/src/index.ts
+index 3713b0f..be45506 100644
+--- a/src/index.ts
++++ b/src/index.ts
+@@ -409,8 +409,19 @@ export function match<P extends ParamData>(
+ 
+   const decoders = keys.map((key) => {
+     if (decode === false) return NOOP_VALUE;
+-    if (key.type === "param") return decode;
+-    return (value: string) => value.split(delimiter).map(decode);
++
++    const decodeParam = (value: string) => {
++      try {
++        return decode(value);
++      } catch (err) {
++        throw new URIError(
++          `Failed to decode param "${key.name}" ("${value}"): ${(err as Error).message}`,
++        );
++      }
++    };
++
++    if (key.type === "param") return decodeParam;
++    return (value: string) => value.split(delimiter).map(decodeParam);
+   });
+ 
+   return function match(input: string) {
+```
+
+### Пояснення змінених рядків:
+
+- `const decodeParam = (value: string) => {`: оголошує локальну допоміжну функцію-обгортку для декодування окремого рядкового значення (сегмента).
+- `try { return decode(value); }`: пробує виконати декодування поточного значення через функцію `decode`.
+- `catch (err) {`: перехоплює виняток, якщо декодування не вдалося (наприклад, при некоректному %-кодуванні).
+- `throw new URIError(...)`: створює та викидає новий `URIError` зі збереженням типу винятку.
+- `` `Failed to decode param "${key.name}" ("${value}"): ${(err as Error).message}` ``: форматує нове повідомлення помилки з ім'ям параметра, конкретним сирим значенням (для wildcard — саме цим не декодованим сегментом) та оригінальним повідомленням помилки.
+- `if (key.type === "param") return decodeParam;`: повертає функцію `decodeParam` для декодування звичайних параметрів.
+- `return (value: string) => value.split(delimiter).map(decodeParam);`: використовує `decodeParam` замість `decode` у `.map()`, щоб кожен сегмент wildcard декодувався з потрібною обробкою помилок.
